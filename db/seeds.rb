@@ -6,14 +6,32 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
- 
-User.create(user_id: 1, first_name: "mark", email: "mark@mark.com")
-Card.create(card_id: 1, card_type: "creature", color: "red", mana_cost: "r", power: 100, toughness: 100)
-Deck.create(deck_id: 1, user_id: 1)
-DeckCard.create(card_id: 1, deck_id: 1)
-CollectionCard.create(card_id: 1, user_id: 1)
-WishList.create(user_id: 1, card_id: 1, target_price: 1.00) 
+10.times do |x|
+  x + 1
+User.create(user_id: x + 1, 
+            first_name: Faker::GameOfThrones.character, 
+            email: Faker::Internet.email)
 
+Card.create(card_id: x + 1, 
+            card_type: "creature", 
+            color: Faker::Color.color_name, 
+            mana_cost: "red", 
+            power: Faker::Number.between(0, 10), 
+            toughness: Faker::Number.between(1, 10))
+
+Deck.create(deck_id: x + 1, 
+            user_id: Faker::Number.between(1, 10))
+
+DeckCard.create(card_id: Faker::Number.between(1, 20), 
+                deck_id: Faker::Number.between(1, 10))
+
+CollectionCard.create(card_id: Faker::Number.between(1, 20), 
+                      user_id: Faker::Number.between(1, 10))
+
+WishList.create(user_id: Faker::Number.between(1, 10), 
+                card_id: Faker::Number.between(1, 20), 
+                target_price: Faker::Number.decimal(2,2)) 
+end
 
 
 
