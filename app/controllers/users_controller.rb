@@ -14,7 +14,7 @@ class UsersController < ApplicationController
                      email: params["email"],
                      admin: false)
     @user.save
-    ren
+    render :index
   end
 
   def show
@@ -27,10 +27,11 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find_by(id: params[:id])
-    @user = User.assign_attributes(first_name: params["first_name"],
-                     last_name: params["last_name"],
-                     email: params["email"])
-    render :edit
+    @user.assign_attributes(first_name: params["first_name"],
+                           last_name: params["last_name"],
+                           email: params["email"])
+    @user.save
+    render :show
   end
 
   def destroy

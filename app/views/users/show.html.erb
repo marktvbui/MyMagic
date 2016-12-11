@@ -1,0 +1,13 @@
+<div>
+  <h3>Full Name: <%= @user.first_name %></h3>
+  <h3>Last Name: <%= @user.last_name %></h3>
+  <h3>Email: <%= @user.email %></h3>
+
+</div>
+ 
+  <div>
+  <%= link_to "Edit Contender", "/users/#{@user.id}/edit"%>
+  </div>
+
+  
+  <%= link_to "Delete Contender", "/users/#{@user.id}", method: :delete %> 
