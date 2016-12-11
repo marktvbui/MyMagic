@@ -9,8 +9,10 @@
 10.times do |x|
   x + 1
 User.create(user_id: x + 1, 
-            first_name: Faker::GameOfThrones.character, 
-            email: Faker::Internet.email)
+            first_name: Faker::GameOfThrones.character.first_name,
+            last_name: Faker::GameOfThrones.character.last_name, 
+            email: Faker::Internet.email("#{first_name}.#{last_name}")
+            )
 
 Card.create(card_id: x + 1, 
             card_type: "creature", 
