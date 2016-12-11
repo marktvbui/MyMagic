@@ -8,7 +8,7 @@
 
 10.times do |x|
   x + 1
-User.create(user_id: x + 1, 
+User.create(user_id: x + 10, 
             first_name: Faker::GameOfThrones.character.first_name,
             last_name: Faker::GameOfThrones.character.last_name, 
             email: Faker::Internet.email("#{first_name}.#{last_name}")

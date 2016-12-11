@@ -28,11 +28,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootstrap', '~> 4.0.0.alpha5'
-gem 'awesome_print'
-gem 'better_errors'
-gem 'faker'
 gem 'seed_dump'
-gem 'annotate'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -40,6 +37,10 @@ gem 'annotate'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'annotate'
+  gem 'awesome_print'
+  gem 'better_errors'
+  gem 'faker'
 end
 
 group :development do
