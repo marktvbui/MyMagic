@@ -14,7 +14,7 @@ class UsersController < ApplicationController
                      email: params["email"],
                      admin: false)
     @user.save
-    render :new
+    ren
   end
 
   def show
