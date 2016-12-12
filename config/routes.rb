@@ -14,4 +14,16 @@ Rails.application.routes.draw do
 
   # resources :users
   
+  get "/cards", to: "cards#index"
+
+  get "cards/new", to: "cards#new"
+  post "cards", to: "cards#create"
+
+  get "cards/:id", to: "cards#show"
+  get "cards/:id/edit", to: "cards#edit"
+
+  patch "cards/:id", to: "cards#update"
+  delete "cards/:id", to: "cards#destroy"
+
+  # resources :cards
 end

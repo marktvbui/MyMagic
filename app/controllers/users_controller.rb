@@ -13,8 +13,10 @@ class UsersController < ApplicationController
                      last_name: params["last_name"],
                      email: params["email"],
                      admin: false)
-    @user.save
-    render :index
+    if @user.save
+      flash[:success] = "User Account Created!"
+      render :index
+    end
   end
 
   def show
@@ -31,13 +33,15 @@ class UsersController < ApplicationController
                            last_name: params["last_name"],
                            email: params["email"])
     @user.save
+    flash[:info] = "User info has been updated!"
     render :show
   end
 
   def destroy
     @user = User.find_by(id: params[:id])
     @user.destroy
-    redirect '/users'
+    flash[:danger] = "User has"
+    redirect_to '/users'
   end
 
 end
