@@ -16,6 +16,8 @@ class UsersController < ApplicationController
     if @user.save
       flash[:success] = "User Account Created!"
       render :index
+    else
+      render :create
     end
   end
 
@@ -40,7 +42,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find_by(id: params[:id])
     @user.destroy
-    flash[:danger] = "User has"
+    flash[:danger] = "Our greatness has pushed the user away!"
     redirect_to '/users'
   end
 

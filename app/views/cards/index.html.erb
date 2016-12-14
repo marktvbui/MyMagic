@@ -1,0 +1,16 @@
+<center>Here lies Magic cards</center>
+
+
+<% @cards.each do |card| %>
+  <div>
+  <h3>Card Name: <%= card["name"] %></h3>
+ <!--  <h2>Card Type: <%= card["type"] %></h2>
+  <h2>Card Color: <%= card["color"] %></h2>
+  <h2>Mana Cost: <%= card["mana_cost"] %></h2>
+  <h2>Power: <%= card["power"] %></h2>
+  <h2>Toughness: <%= card["toughness"] %></h2> -->
+  <h4>Rarity: <%= card["editions"][0]["rarity"] %></h4>
+
+  <img src="<%= card["editions"][0]["image_url"] %>">
+  </div>
+<% end %>
