@@ -21,13 +21,13 @@ Rails.application.routes.draw do
 
   # resources :cards
 
-  get "/collections", to: "collections#index"
-  get "/collections/new", to: "collections#new"
-  post "/collections", to: "collections#create"
-  get "/collections/:id", to: "collections#show"
-  get "/collections/:id/edit", to: "collections#edit"
-  patch "/collections/:id", to: "collections#update"
-  delete "/collections/:id", to: "collections#destroy"
+  get "/collection_cards", to: "collection_cards#index"
+  get "/collection_cards/new", to: "collection_cards#new"
+  post "/collection_cards", to: "collection_cards#create"
+  get "/collection_cards/:id", to: "collection_cards#show"
+  get "/collection_cards/:id/edit", to: "collection_cards#edit"
+  patch "/collection_cards/:id", to: "collection_cards#update"
+  delete "/collection_cards/:id", to: "collection_cards#destroy"
 
   # resources :collections
 

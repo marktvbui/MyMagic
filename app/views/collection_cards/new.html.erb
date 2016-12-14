@@ -1,0 +1,36 @@
+<center>Add new cards here</center>
+<%= form_tag "/collection_cards", method: :post do%>
+
+<div>
+<%= label_tag :name, "Card Name:" %>
+<%= text_field_tag :name, @collections.name %>
+</div>
+
+<div>
+<%= label_tag :mana, "Mana Cost:" %>
+<%= text_field_tag :mana, @collections.mana %>
+</div>
+
+<div>
+<%= label_tag :color, "Card Color:" %>
+<%= text_field_tag :color, @collections.color %>
+</div>
+
+<div>
+<%= label_tag :rarity, "Card Rarity: " %>
+<%= text_field_tag :rarity, @collections.rarity %>
+</div>
+
+<div>
+<%= label_tag :power, "Creature Power: " %>
+<%= text_field_tag :power, @collections.power %>
+</div>
+
+<div>
+<%= label_tag :toughness, "Creature Toughness: " %>
+<%= text_field_tag :toughness, @collections.toughness %>
+</div>
+
+<%= submit_tag "Add Card" %>
+
+<% end %>
