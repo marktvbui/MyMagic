@@ -11,11 +11,12 @@
   <body>
    <div class="container">
 
-   <% flash.each do |name, message| %>
-   <div class="alert alert-<%= name %> alert-dismissable"  role="alert">
-   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> <p> <%= message %> </p>
-   </div>
-   <% end %>
+    <% flash.each do |name, message| %>
+      <div class="alert alert-<%= name %> alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <%= message %>
+    </div>
+  <% end %>
    
     <%= yield %>
   </body>
