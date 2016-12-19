@@ -1,1 +1,30 @@
-edit page
+<center><h1>User information: </h1></center>
+name: params[:name],
+                                      mana: params[:mana],
+                                      color: params[:color],
+                                      rarity: params[:rarity],
+                                      power: params[:power],
+                                      toughness: params[:toughness]
+                                      )
+<%= form_tag "/collection_cards/:id", method: :patch do%>
+
+<div>
+<%= label_tag :name, "Name:" %>
+<%= text_field_tag :name, @collections.name %>
+</div>
+
+<div>
+<%= label_tag :mana, "Mana:" %>
+<%= text_field_tag :mana, @collections.mana %>
+</div>
+
+<div>
+<%= label_tag :color, "Card Color:" %>
+<%= text_field_tag :color, @collections.color %>
+</div>
+
+<div>
+
+</div>
+<%= submit_tag "Update User Info" %>
+<% end %>

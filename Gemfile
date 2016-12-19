@@ -31,6 +31,8 @@ gem 'bootstrap', '~> 4.0.0.alpha5'
 gem 'seed_dump'
 gem 'unirest'
 gem 'devise'
+gem 'omniauth-facebook'
+gem 'dotenv-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

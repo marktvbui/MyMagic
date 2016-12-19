@@ -18,8 +18,8 @@ class CollectionCardsController < ApplicationController
                                       toughness: params[:toughness]
                                       )
     if @collections.save
-      flash[:success] = "Contact has been created"
-      redirect_to "/contacts"
+      flash[:success] = "Card has been saved"
+      redirect_to "/collection_cards"
     else
       flash[:danger] = @collections.errors.full_messages.join("<br>").html_safe
       render :new

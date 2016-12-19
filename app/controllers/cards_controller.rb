@@ -23,7 +23,7 @@ class CardsController < ApplicationController
   end
 
   def show
-    @card = Card.find_by(id: params["id"])
+    @card = Unirest.get("#{ENV['API_URL']}/#{params[:id]}.json").body
   end
 
   def edit
@@ -52,8 +52,6 @@ class CardsController < ApplicationController
     render[:danger] = "Guess we won't be using that card anymore"
     redirect_to "/cards"
   end
-
-
 
 
 end
