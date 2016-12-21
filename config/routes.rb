@@ -32,6 +32,10 @@ Rails.application.routes.draw do
 
   # resources :collections
 
+  get "/login", to: "devise/sessions#new"
+  post "/login", to: "sessions#create"
+  get "/logout", to: "sessions#destroy"
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
 end
