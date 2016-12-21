@@ -15,7 +15,8 @@ class CollectionCardsController < ApplicationController
                                       color: params[:color],
                                       rarity: params[:rarity],
                                       power: params[:power],
-                                      toughness: params[:toughness]
+                                      toughness: params[:toughness],
+                                      card_id: rand(50),
                                       )
     if @collections.save
       flash[:success] = "Card has been saved"
