@@ -1,5 +1,3 @@
-class OmniauthCallbacksController < ApplicationController
-
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def facebook
@@ -20,4 +18,3 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 end
 
-end
