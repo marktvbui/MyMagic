@@ -1,1 +1,22 @@
-new decks
+<h1>Let's Start a new Deck!</h1>
+
+<%= form_tag "/decks", method: :post do %>
+
+<div>
+<%= label_tag :deck_name, "Deck Name:" %>
+<%= text_field_tag :deck_name, @deck.name %>
+</div>
+
+<div>
+<%= label_tag :deck_color, "Deck Color(s)" %>
+<%= text_field_tag :deck_color, @deck.color %>
+</div>
+
+<div>
+<%= label_tag :deck_description, "Deck Description" %>
+<%= text_field_tag :deck_description, @deck.description %>
+</div>
+
+<div>
+<%= submit_tag "Create Deck" %>
+</div>

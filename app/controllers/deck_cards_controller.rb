@@ -10,8 +10,8 @@ class DeckCardsController < ApplicationController
 
   def create
     @deckcard = DeckCards.new{user.id :current_user}
-    if @user.save
-      flash[:success] = "User Account Created!"
+    if @deckcard.save
+      flash[:success] = "Card has been added to your Deck!"
       render :index
     else
       render :create
@@ -39,7 +39,7 @@ class DeckCardsController < ApplicationController
   def destroy
     @deckcard = DeckCards.find_by(id: params[:id])
     @deckcard.delete
-    flash[:danger] = "Useless card has been deleted"
+    flash[:danger] = "Good decision, you didn't need that card here!"
     redirect_to '/deck_cards'
   end
 

@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get "/decks/:id/edit", to: "decks#edit"
   patch "/decks/:id", to: "decks#update"
   delete "/decks/:id", to: "decks#destroy"
+  post "/search", to: "decks/search"
 
   get "/deck_cards", to: "deck_cards#index"
   get "/deck_cards/new", to: "deck_cards#new"

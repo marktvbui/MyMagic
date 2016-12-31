@@ -1,11 +1,12 @@
 class CardsController < ApplicationController
   
+  def show
+    @card = Card.find(params[:name])
+  end
+
   def index
     @cards = Unirest.get("#{ENV['API_URL']}").body
   end
 
-  def show
-    @card = Unirest.get("#{ENV['API_URL']}?multiverseid=#{params[:id].to_i}").body
-  end
 
 end

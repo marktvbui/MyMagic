@@ -1,46 +1,62 @@
 class DecksController < ApplicationController
 
   def index
-    @deck = Decks.all
+    @page_title = "Check out these Decks!"
+    @decks = Deck.all
   end
 
   def new
-    @deck = Decks.new
+    @deck = Deck.new
   end
 
   def create
-    @deck = Decks.new{user.id :current_user}
+    @deck = Deck.new{user.id :current_user, 
+                      name: params[:deck_name],
+                      color: params[:deck_color], 
+                      description: params[:deck_description]}
     if @deck.save
       flash[:success] = "Deck has been Created!"
-      render :index
+      redirect_to "/decks/#{@deck.id}"
     else
-      render :create
+      flash[:danger] = @decks.errors.full_messages.join("br").html.safe
+      render :new
     end
   end
   
   def show
-    @deck = Decks.find_by(id: params[:id])
+    @deck = Deck.find_by(id: params[:id])
   end
 
   def edit
-    @deck = Decks.find_by(id: params[:id])
+    @deck = Deck.find_by(id: params[:id])
   end
 
   def update
-    @deck = Decks.find_by(id: params[:id])
-    @deck.assign_attributes(first_name: params["first_name"],
-                           last_name: params["last_name"],
-                           email: params["email"])
-    @deck.save
-    flash[:info] = "Current deck has been updated!"
-    render :show
+    @deck = Deck.find_by(id: params[:id])
+    @deck.assign_attributes(name: params[:deck_name], 
+                            color: params[:deck_color],
+                            description: params[:deck_description]
+                            )
+    if @deck.save
+      flash[:info] = "Deck has been updated!"
+      redirect_to "/decks/"
+    else 
+      flash[:danger] = "Please fill out all fields"
+      render :new
+    end
   end
 
   def destroy
-    @deck = Decks.find_by(id: params[:id])
-    @deck.delete
+    @deck = Deck.find_by(id: params[:id])
+    @deck.destroy
     flash[:danger] = "Useless deck has been deleted"
     redirect_to '/decks'
+  end
+
+  def search
+    @search_term = params[:search]
+    @deck = Deck.where("name LIKE ?", "%#{@search_term}")
+    render :index
   end
 
 
