@@ -4,9 +4,13 @@
 <h4>Deck Description: <%= @deck.description %></h4>
 
 <div>
-<%= link_to "Edit Deck", "/decks/#{@deck.id}/edit" %>
+<%= link_to "Add Cards to Deck", "/deck_cards/", method: :post %>
 </div>
 
 <div>
-<%= link_to "Delete Deck", "/decks/#{@deck.id}" method: :delete %>
+<%= link_to "Edit Deck", "/decks/#{@deck.id}/" %>
+</div>
+
+<div>
+<%= link_to "Delete Deck", "/decks/#{@deck.id}", method: :delete %>
 </div>
