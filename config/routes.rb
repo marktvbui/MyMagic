@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get "/collection_cards/:id/edit", to: "collection_cards#edit"
   patch "/collection_cards/:id", to: "collection_cards#update"
   delete "/collection_cards/:id", to: "collection_cards#destroy"
+  post "/search_collection", to: "collection_cards#search"
 
   # resources :collections
 
@@ -24,7 +25,7 @@ Rails.application.routes.draw do
   get "/decks/:id/edit", to: "decks#edit"
   patch "/decks/:id", to: "decks#update"
   delete "/decks/:id", to: "decks#destroy"
-  post "/search", to: "decks#search"
+  post "/search_deck", to: "decks#search"
 
   get "/deck_cards", to: "deck_cards#index"
   get "/deck_cards/new", to: "deck_cards#new"

@@ -51,18 +51,18 @@
   </a>
 </div>
 
-<%= link_to "Sort by color", "/decks?sort=color" %>
-<br>
-<%= link_to "Sort by name", "/decks?sort=name" %>
-<br>
 
 <center>
-<%= form_tag "/search", method: :post do %>
+<%= form_tag "/search_deck", method: :post do %>
   <%= label_tag :search %>
   <%= text_field_tag :search %>
   <%= submit_tag "Search" %>
 <% end %>
 </center>
+
+<%= link_to "Sort by color", "/decks?sort=color" %>
+<%= link_to "Sort by name", "/decks?sort=name" %>
+<br>
 
 <% @decks.each do |deck| %>
   <div class="col-md-4">

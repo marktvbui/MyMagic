@@ -1,5 +1,7 @@
-Chosen Card:
+<h2>Chosen Card: <%= @card["name"] %></h2>
+
 <div>
-<%= @card["name"] %>
 <img src="<%= @card["editions"][0]["image_url"] %>">
 </div>
+
+<h3>Rarity: <%= @card["editions"][0]["rarity"] %></h3>

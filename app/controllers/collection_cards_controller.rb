@@ -1,7 +1,8 @@
 class CollectionCardsController < ApplicationController
 
   def index
-    @collections = CollectionCard.all
+    sort_colum = params[:sort]
+    @collections = CollectionCard.all.order(sort_colum)
   end
 
   def new
@@ -42,6 +43,12 @@ class CollectionCardsController < ApplicationController
 
   def delete
     @collections = CollectionCard.find_by(id: params[:id])
+  end
+
+  def search
+    @search_term = params[:search]
+    @collections = CollectionCard.where("name LIKE ?", "%#{@search_term}%")
+    render :index
   end
 
 end

@@ -1,7 +1,7 @@
 class CardsController < ApplicationController
   
   def show
-    @card = Card.find(name: params[:name])
+    @card = Unirest.get("#{ENV['API_URL']}/#{params[:id]}").body
   end
 
   def index

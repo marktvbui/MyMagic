@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= reqyure bootstrap-sprockets
-//= require turbolinks
+//= require angular
+//= require app
 //= require_tree .

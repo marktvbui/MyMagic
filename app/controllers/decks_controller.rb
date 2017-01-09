@@ -2,7 +2,8 @@ class DecksController < ApplicationController
 
   def index
     @page_title = "Check out these Decks!"
-    @decks = Deck.all
+    sort_column = params[:sort]
+    @decks = Deck.all.order(sort_column)
   end
 
   def new
@@ -55,7 +56,7 @@ class DecksController < ApplicationController
 
   def search
     @search_term = params[:search]
-    @deck = Deck.where("name LIKE ?", "%#{@search_term}")
+    @decks = Deck.where("name LIKE ?", "%#{@search_term}")
     render :index
   end
 

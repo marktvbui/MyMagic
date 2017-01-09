@@ -1,1 +1,25 @@
-index page
+<h1>Personal Collection</h1>
+
+<center>
+<%= form_tag "/search_collection", method: :post do %>
+<%= label_tag :search %>
+<%= text_field_tag :search %>
+<%= submit_tag "Search" %>
+<% end %>
+</center>
+
+<%= link_to "Sort by Color", "collection_cards?sort=color" %><br>
+<%= link_to "Sort by Rarity", "collection_cards?sort=rarity" %><br>
+<%= link_to "Sort by Name", "collection_cards?sort=name" %><br>
+
+<% @collections.each do |collection| %>
+
+  <div class="col-md-4">
+    <div class="well">
+      <div class="collection_card"><%= link_to collection.name, "/collection_cards/#{collection.id}/" %></div>
+      <div>Card Color: <%= collection.color %></div>
+      <div>Card Rarity: <%= collection.rarity %></div>
+    </div>
+  </div>
+
+<% end %>
