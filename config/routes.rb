@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   # delete "/collection_cards/:id", to: "collection_cards#destroy"
   post "/search_collection", to: "collection_cards#search"
 
-  resources :collections
+  resources :collection_cards
 
   # get "/decks", to: "decks#index"
   # get "/decks/new", to: "decks#new"
