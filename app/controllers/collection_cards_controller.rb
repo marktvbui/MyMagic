@@ -14,8 +14,7 @@ class CollectionCardsController < ApplicationController
                                         name: params[:name],
                                         mana: params[:mana],
                                         color: params[:color],
-                                        rarity: params[:rarity],
-                                        card_id: rand(50),
+                                        rarity: params[:rarity]
                                         )
     if @collections.save
       flash[:success] = "Card has been added"
