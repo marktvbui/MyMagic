@@ -1,1 +1,28 @@
-new page
+<h1>Add new cards here:</h1>
+
+<%= form_tag "/deck_cards", method: :post do%>
+
+<div>
+<%= label_tag :name, "Item Name:" %>
+<%= text_field_tag :name, @.name%>
+</div>
+
+<div>
+<%= label_tag :item_price, "Item Price:" %>
+<%= text_field_tag :item_price, @products.price %>
+</div>
+
+<div>
+<%= label_tag :description, "Description:" %>
+<%= text_field_tag :description, @products.description %>
+</div>
+
+<div>
+<%= label_tag :supplier_id, "Supplier ID" %>
+<%= text_field_tag :supplier_id %>
+
+<div>
+<%= submit_tag "Sell me!" %>
+</div>
+
+<% end %>

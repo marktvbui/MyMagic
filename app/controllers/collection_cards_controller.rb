@@ -10,17 +10,15 @@ class CollectionCardsController < ApplicationController
   end
 
   def create 
-    @collections = CollectionCard.new(user_id: current_user,
-                                      name: params[:name],
-                                      mana: params[:mana],
-                                      color: params[:color],
-                                      rarity: params[:rarity],
-                                      power: params[:power],
-                                      toughness: params[:toughness],
-                                      card_id: rand(50),
-                                      )
+    @collections = CollectionCard.create(user_id: current_user.id,
+                                        name: params[:name],
+                                        mana: params[:mana],
+                                        color: params[:color],
+                                        rarity: params[:rarity],
+                                        card_id: rand(50),
+                                        )
     if @collections.save
-      flash[:success] = "Card has been saved"
+      flash[:success] = "Card has been added"
       redirect_to "/collection_cards"
     else
       flash[:danger] = @collections.errors.full_messages.join("<br>").html_safe

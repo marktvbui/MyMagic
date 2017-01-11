@@ -1,10 +1,8 @@
-<center><h1>User information: </h1></center>
+<center><h1>Card information: </h1></center>
                                       name: params[:name],
                                       mana: params[:mana],
                                       color: params[:color],
-                                      rarity: params[:rarity],
-                                      power: params[:power],
-                                      toughness: params[:toughness]
+                                      rarity: params[:rarity]                  
                                       )
 <%= form_tag "/collection_cards/:id", method: :patch do%>
 
@@ -24,7 +22,10 @@
 </div>
 
 <div>
+<%= label_tag :rarity, "Card Rarity:" %>
+<%= text_field_tag :rarity, @collections.rarity %>
+</div>
 
 </div>
-<%= submit_tag "Update User Info" %>
+<%= submit_tag "Update Card Info" %>
 <% end %>
