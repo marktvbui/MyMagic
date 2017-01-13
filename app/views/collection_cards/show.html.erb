@@ -1,1 +1,16 @@
-show page
+<h1> <%= @collection.name %> </h1>
+
+<h4>Deck color(s): <%= @collection.color %></h4>
+
+
+<div>
+<%= link_to "Add Cards to Collection", "/collection_cards/new", method: :post %>
+</div>
+
+<div>
+<%= link_to "Edit Card", "/collection_cards/#{@deck.id}/edit" %>
+</div>
+
+<div>
+<%= link_to "Remove Card", "/collection_cards/#{@deck.id}", method: :delete %>
+</div>

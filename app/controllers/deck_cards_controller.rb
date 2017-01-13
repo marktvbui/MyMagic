@@ -9,7 +9,10 @@ class DeckCardsController < ApplicationController
   end
 
   def create
-    @deckcard = DeckCard.new{user.id :current_user}
+    @deckcard = DeckCard.new(name: params[:name],
+                             mana: params[:mana],
+                             color: params[:color],
+                             rarity: params[:rarity])
     if @deckcard.save
       flash[:success] = "Card has been added to your Deck!"
       render :index
@@ -28,8 +31,10 @@ class DeckCardsController < ApplicationController
 
   def update
     @deckcard = DeckCard.find_by(id: params[:id])
-    @deckcard.assign_attributes(id: params["name"],
-                                rarity: params["rarity"])
+    @deckcard.assign_attributes(name: params[:name],
+                                mana: params[:mana],
+                                color: params[:color],
+                                rarity: params[:rarity])
     @deckcard.save
     flash[:info] = "Current deck has been updated!"
     render :show

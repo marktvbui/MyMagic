@@ -59,9 +59,11 @@
 </center>
 
 <%= link_to "Sort by color", "/decks?sort=color" %>
+<br>
 <%= link_to "Sort by name", "/decks?sort=name" %>
 <br>
-
+<%= link_to "Create New Deck", "/decks/new" %>
+<br>
 <% @decks.each do |deck| %>
   <div class="col-md-4">
     <div class="jumbotron">

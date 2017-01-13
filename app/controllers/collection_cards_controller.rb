@@ -2,7 +2,7 @@ class CollectionCardsController < ApplicationController
 
   def index
     sort_colum = params[:sort]
-    @collections = CollectionCard.all.order(sort_colum)
+    @collections = current_user.collection_cards
   end
 
   def new
@@ -10,12 +10,12 @@ class CollectionCardsController < ApplicationController
   end
 
   def create 
-    @collections = CollectionCard.create(user_id: current_user.id,
-                                        name: params[:name],
-                                        mana: params[:mana],
-                                        color: params[:color],
-                                        rarity: params[:rarity]
-                                        )
+    @collections = CollectionCard.new(user_id: current_user.id,
+                                      name: params[:name],
+                                      mana: params[:mana],
+                                      color: params[:color],
+                                      rarity: params[:rarity]
+                                      )
     if @collections.save
       flash[:success] = "Card has been added"
       redirect_to "/collection_cards"

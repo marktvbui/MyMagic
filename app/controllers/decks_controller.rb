@@ -1,9 +1,9 @@
 class DecksController < ApplicationController
 
   def index
-    @page_title = "Check out these Decks!"
+    @page_title = "Here are your decks!"
     sort_column = params[:sort]
-    @decks = Deck.all.order(sort_column)
+    @decks = current_user.decks
   end
 
   def new
@@ -11,10 +11,11 @@ class DecksController < ApplicationController
   end
 
   def create
-    @deck = Deck.new{user.id :current_user, 
-                      name: params[:deck_name],
-                      color: params[:deck_color], 
-                      description: params[:deck_description]}
+    @deck = Deck.new(user_id: current_user.id, 
+                     name: params[:deck_name],
+                     color: params[:deck_color], 
+                     description: params[:deck_description]
+                     )
     if @deck.save
       flash[:success] = "Deck has been Created!"
       redirect_to "/decks/#{@deck.id}"
