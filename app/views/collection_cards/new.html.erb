@@ -3,23 +3,14 @@
 
 <div>
 <%= label_tag :name, "Card Name:" %>
-<%= text_field_tag :name, @collections.name %>
+<%= text_field_tag :name, @collections["name"] %>
 </div>
 
 <div>
-<%= label_tag :mana, "Mana Cost:" %>
-<%= text_field_tag :mana, @collections.mana %>
+<%= label_tag :image_url, "Card Pic:" %>
+<%= text_field_tag :image_url, @collections["editions"][0]["rarity"] %>
 </div>
 
-<div>
-<%= label_tag :color, "Card Color:" %>
-<%= text_field_tag :color, @collections.color %>
-</div>
-
-<div>
-<%= label_tag :rarity, "Card Rarity: " %>
-<%= text_field_tag :rarity, @collections.rarity %>
-</div>
 
 <%= submit_tag "Add Card" %>
 
