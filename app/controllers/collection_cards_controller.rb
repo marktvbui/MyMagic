@@ -11,10 +11,9 @@ class CollectionCardsController < ApplicationController
 
   def create 
     @collections = CollectionCard.new(user_id: current_user.id,
-                                      name: params[:name],
-                                      mana: params[:mana],
-                                      color: params[:color],
-                                      rarity: params[:rarity]
+                                      card_id: params[:card_id],
+                                      image_url: params[:image_url],
+                                      quantity: params[:quantity]
                                       )
     if @collections.save
       flash[:success] = "Card has been added"
