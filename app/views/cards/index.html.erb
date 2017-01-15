@@ -10,15 +10,9 @@
 
 <% @cards.each do |card| %>
   <div>
-  <h3>Card Name: <%= card["name"] %></h3>
- <!--  <h2>Card Type: <%= card["type"] %></h2>
-  <h2>Card Color: <%= card["color"] %></h2>
-  <h2>Mana Cost: <%= card["mana_cost"] %></h2>
-  <h2>Power: <%= card["power"] %></h2>
-  <h2>Toughness: <%= card["toughness"] %></h2> -->
-  <h5>Rarity: <%= card["editions"][0]["rarity"] %></h5>
-
+  <h5>Card Name: <%= card["name"] %></h5>
   <img src="<%= card["editions"][0]["image_url"] %>">
+  <%= link_to "Add to Collection", "/collection_cards/new", method: :post %>
   </div>
 <% end %>
 
