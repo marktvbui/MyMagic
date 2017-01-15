@@ -10,11 +10,17 @@ class CollectionCardsController < ApplicationController
   end
 
   def create 
-    @collections = CollectionCard.new(user_id: current_user.id,
+    @collections = CollectionCard.find_or_initialize_by(
+                                      user_id: current_user.id,
                                       card_id: params[:card_id],
-                                      image_url: params[:image_url],
-                                      quantity: params[:quantity]
+                                      image_url: params[:image_url]
                                       )
+    if @collections.id
+      @collections.quantity = @collections.quantity + params[:quantity].to_i
+    else
+      @collections.quantity = params[:quantity]
+    end
+
     if @collections.save
       flash[:success] = "Card has been added"
       redirect_to "/collection_cards"
@@ -35,6 +41,7 @@ class CollectionCardsController < ApplicationController
 
   def update
     @collections = CollectionCard.find_by(id: params[:id])
+    render :index
   end
 
   def delete

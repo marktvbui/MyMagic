@@ -1,13 +1,10 @@
 class Card
 
-  attr_accessor :name, :id, :type, :power, :toughness, :image_url
+  attr_accessor :name, :id, :image_url
 
   def initialize(input)
     @name = input["name"]
     @id = input["id"]
-    @type = input["type"]
-    @power = input["power"]
-    @toughness = input["toughness"]
     @image_url = input["image_url"]
   end
 
