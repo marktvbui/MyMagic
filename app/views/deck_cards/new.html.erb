@@ -8,11 +8,6 @@
 </div>
 
 <div>
-<%= label_tag :mana, "Mana Cost:" %>
-<%= text_field_tag :mana, @deckcard.mana %>
-</div>
-
-<div>
 <%= label_tag :color, "Card Color(s): " %>
 <%= text_field_tag :color, @deckcard.color %>
 </div>
@@ -20,8 +15,13 @@
 <div>
 <%= label_tag :rarity, "Card Rarity: " %>
 <%= text_field_tag :rarity, @deckcard.rarity %>
+<div>
 
 <div>
+<%= label_tag :mana, "Mana Cost:" %>
+<%= text_field_tag :mana, @deckcard.mana %>
+</div>
+
 <%= submit_tag "Add to Deck" %>
 </div>
 
