@@ -2,13 +2,13 @@
 <%= form_tag "/collection_cards", method: :post do%>
 
 <div>
-<%= label_tag :name, "Card Name:" %>
-<%= text_field_tag :name, @collections["name"] %>
+<%= label_tag :card_id, "Card Name:" %>
+<%= text_field_tag :card_id, @collections["name"] %>
 </div>
 
 <div>
 <%= label_tag :image_url, "Card Image:" %>
-<%= text_field_tag :image_url, @collections["editions"][0]["rarity"] %>
+<%= text_field_tag :image_url, @collections["image_url"] %>
 </div>
 
 

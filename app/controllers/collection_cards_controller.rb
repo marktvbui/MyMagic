@@ -43,7 +43,7 @@ class CollectionCardsController < ApplicationController
 
   def search
     @search_term = params[:search]
-    @collections = CollectionCard.where("name LIKE ?", "%#{@search_term}%")
+    @collections = CollectionCard.where("card_id LIKE ?", "%#{@search_term}%")
     render :index
   end
 
