@@ -3,23 +3,8 @@
 <%= form_tag "/deck_cards", method: :post do%>
 
 <div>
-<%= label_tag :name, "Card Name:" %>
-<%= text_field_tag :name, @deckcard.name%>
-</div>
-
-<div>
-<%= label_tag :color, "Card Color(s): " %>
-<%= text_field_tag :color, @deckcard.color %>
-</div>
-
-<div>
-<%= label_tag :rarity, "Card Rarity: " %>
-<%= text_field_tag :rarity, @deckcard.rarity %>
-<div>
-
-<div>
-<%= label_tag :mana, "Mana Cost:" %>
-<%= text_field_tag :mana, @deckcard.mana %>
+<%= label_tag :image_url, "Card: " %>
+<%= text_field_tag :image_url, @deckcard.image_url%>
 </div>
 
 <%= submit_tag "Add to Deck" %>

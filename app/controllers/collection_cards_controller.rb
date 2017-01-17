@@ -3,6 +3,11 @@ class CollectionCardsController < ApplicationController
   def index
     sort_colum = params[:sort]
     @collections = current_user.collection_cards
+    @cards = Card.all
+  end
+
+  def show
+    @card = Card.find(params[:id])
   end
 
   def new
@@ -31,10 +36,6 @@ class CollectionCardsController < ApplicationController
 
   end
 
-  def show
-    @collections = CollectionCard.find_by(id: params[:id])
-  end
-
   def edit
     @collections = CollectionCard.find_by(id: params[:id])
   end
@@ -44,7 +45,9 @@ class CollectionCardsController < ApplicationController
     render :index
   end
 
-  def delete
+  def destroy
+    @card = Card.find(params[:name])
+    redirect_to "/collection_cards"
     @collections = CollectionCard.find_by(id: params[:id])
   end
 

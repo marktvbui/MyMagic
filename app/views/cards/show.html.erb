@@ -1,9 +1,11 @@
 <h2>Chosen Card: <%= @card["name"] %></h2>
 
 <div>
-<img src="<%= @card["editions"][0]["image_url"] %>">
+<img src="<%= @card["image_url"] %>">
 </div>
 
-<h3>Rarity: <%= @card["editions"][0]["rarity"] %></h3>
-
-<%= link_to "Add to Collection", "/collection_cards/new", method: :post %>
+<%= form_tag "/collection_cards", method: :post do %>
+    <%= hidden_field_tag :card_id, card.id %>
+    Quantity: <%= number_field_tag :quantity %>
+    <%= submit_tag "Add to Collection" %>
+<% end %>

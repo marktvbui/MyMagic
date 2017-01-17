@@ -12,5 +12,8 @@
 class DeckCard < ApplicationRecord
 
   belongs_to :deck
-  belongs_to :card
+
+  def card
+    return Card.find(card_id)
+  end
 end

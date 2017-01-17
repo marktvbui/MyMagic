@@ -14,14 +14,12 @@
 <%= link_to "Find Cards to Add", "cards/" %>
 </center>
 
-<% @collections.each do |collection| %>
 
-  <div class="col-md-4">
-    <div class="well">
-      <div class="collection"><%= collection.card_id %></div>
-      <img src="<%= collection["image_url"] %>">
-      Quantity: <%= collection.quantity %>
-    </div>
+<% @cards.each do |card| %>
+  <div>
+  <%= card.name %>
+  <img src="<%= card["editions"][0]["image_url"] %>">
   </div>
-
 <% end %>
+
+

@@ -2,24 +2,10 @@
 <%= form_tag "/deck_cards/#{@deck.id}", method: :patch do %>
 
 <div>
-<%= label_tag :name, "Card Name: " %>
-<%= text_field_tag :name, @deckcard.name %>
+<%= label_tag :image_url, "Card : " %>
+<%= text_field_tag :image_url, @deckcard.image_url %>
 </div>
 
-<div>
-<%= label_tag :color, "Card Color(s): " %>
-<%= text_field_tag :color, @deckcard.color %>
-</div>
-
-<div>
-<%= label_tag :rarity, "Card Rarity: " %>
-<%= text_field_tag :rarity, @deckcard.rarity %>
-</div>
-
-<div>
-<%= label_tag :mana, "Casting Cost: " %>
-<%= text_field_tag :mana, @deckcard.mana %>
-<div>
 <%= submit_tag "Change Card Info" %>
 
 

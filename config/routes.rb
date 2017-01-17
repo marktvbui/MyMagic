@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # get "/cards", to: "cards#index"
   # get "/cards/:id", to: "cards#show"
 
-  get "/cards_search/", to: "cards#search"
+  get "/cards_search", to: "cards#search"
   resources :cards
 
   # get "/collection_cards", to: "collection_cards#index"
@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   # get "/deck_cards/:id/edit", to: "deck_cards#edit"
   # patch "/deck_cards/:id", to: "deck_cards#update"
   # delete "/deck_cards/:id", to: "deck_cards#destroy"
+  post "/search_deckcards", to: "deck_cards#search"
   resources :deck_cards
 
   devise_for :users, path: '', path_names: {sign_in: 'login', sign_out: 'logout'}, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }

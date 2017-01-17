@@ -9,10 +9,7 @@ class DeckCardsController < ApplicationController
   end
 
   def create
-    @deckcard = DeckCard.new(name: params[:name],
-                            color: params[:color],
-                            rarity: params[:rarity],
-                            mana: params[:mana])
+    @deckcard = DeckCard.new(image_url: params[:image_url])
     @deckcard.save
     if @deckcard.save
       flash[:success] = "Card has been added to your Deck!"
@@ -24,6 +21,7 @@ class DeckCardsController < ApplicationController
   
   def show
     @deckcard = DeckCard.find_by(id: params[:id])
+    @collections = CollectionCard.all
   end
 
   def edit
@@ -38,6 +36,12 @@ class DeckCardsController < ApplicationController
                                 mana: params[:mana])
     @deckcard.save
     flash[:info] = "Current deck has been updated!"
+    render :show
+  end
+
+  def search
+    @search_term = params[:name]
+    @cards = Unirest.get("#{ENV['API_URL']}?name=#{@search_term}").body
     render :show
   end
 

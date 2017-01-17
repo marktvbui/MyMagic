@@ -1,16 +1,15 @@
 class CardsController < ApplicationController
   
   def show
-    @card = Unirest.get("#{ENV['API_URL']}/#{params[:id]}").body
+    @card = Card.find_by(params[:name])
   end
 
   def index
-    @cards = Unirest.get("#{ENV['API_URL']}").body
+    @cards = Card.all
   end
 
   def search
-    @search_term = params[:name]
-    @cards = Unirest.get("#{ENV['API_URL']}?name=#{@search_term}").body
+    @cards = Card.where(name: params[:name])
     render :index
   end
 end

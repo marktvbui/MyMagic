@@ -3,6 +3,15 @@
 <h4>Deck color(s): <%= @deck.color %></h4>
 <h4>Deck Description: <%= @deck.description %></h4>
 
+
+<center>
+<%= form_tag "/cards_deckcards", method: :get do %>
+<%= label_tag :search %>
+<%= text_field_tag :search %>
+<%= submit_tag "Search for cards" %>
+<% end %>
+</center>
+
 <div>
 <%= link_to "Add Cards to Deck", "/deck_cards/new", method: :post %>
 </div>
