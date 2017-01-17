@@ -14,10 +14,9 @@ class CollectionCardsController < ApplicationController
   end
 
   def create 
-    @collection_cards = CollectionCard.find_or_initialize_by(
-                                                            user_id: current_user.id,
-                                                            card_id: params[:card_id]
-                                                            )
+    @collection_cards = CollectionCard.find_or_initialize_by(user_id: current_user.id,
+                                                             card_id: params[:card_id]
+                                                             )
     if @collection_cards.id
       @collection_cards.quantity = @collection_cards.quantity + params[:quantity].to_i
     else
