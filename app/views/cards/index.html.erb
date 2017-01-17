@@ -12,15 +12,17 @@
   <div>
   <h5>Card Name: <%= card.name %></h5>
   <img src="<%= card.image_url %>">
+  
   <%= form_tag "/collection_cards", method: :post do %>
     <%= hidden_field_tag :card_id, card.id %>
     Quantity: <%= number_field_tag :quantity %>
     <%= submit_tag "Add to Collection" %>
   <% end %>
+
   <%= form_tag "/deck_cards", method: :post do %>
     <%= hidden_field_tag :card_id, card.id %>
     Quantity: <%= number_field_tag :quantity %>
-    <%= collection_select :deck_id, :id, :name, Deck.where(user_id: current_user.id) %>
+    <%= collection_select(:post, :deck_id, current_user.decks, :id, :name, {:selected => Deck.where(user_id: current_user.id)}) %>
     <%= submit_tag "Add to Deck" %>
   <% end %>
   </div>

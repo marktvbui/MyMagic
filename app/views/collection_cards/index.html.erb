@@ -1,24 +1,20 @@
 <h1>Personal Collection</h1>
 
-<center>
-<%= form_tag "/search_collection", method: :post do %>
-<%= label_tag :search %>
-<%= text_field_tag :search %>
-<%= submit_tag "Search" %>
-<% end %>
-</center>
-
-<%= link_to "Sort by Name", "collection_cards?sort=card_id" %><br>
+<%= link_to "Sort by Name", "collection_cards?sort=name" %><br>
 
 <center>
-<%= link_to "Find Cards to Add", "cards/" %>
+  <%= form_tag "/cards_search/", method: :get do %>
+    <%= label_tag :name %>
+    <%= text_field_tag :name %>
+    <%= submit_tag "Search for Cards" %>
+  <% end %>
 </center>
 
-
-<% @cards.each do |card| %>
+<% @collection_cards.each do |collection_card| %>
   <div>
-  <%= card.name %>
-  <img src="<%= card["editions"][0]["image_url"] %>">
+  <%= collection_card.quantity %> 
+  <%= collection_card.card.name %>
+  <img src="<%= collection_card.card.image_url %>">
   </div>
 <% end %>
 
