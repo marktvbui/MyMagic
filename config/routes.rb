@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # get "/cards/:id", to: "cards#show"
 
   get "/cards_search", to: "cards#search"
+  get "/videos", to: "cards#videos"
   resources :cards
 
   # get "/collection_cards", to: "collection_cards#index"

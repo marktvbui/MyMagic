@@ -90,6 +90,10 @@
 
   </head>
 
+<script type="text/javascript" src="plugins/rs-plugin-5/js/extensionrevolution.extension.slideanims.min.js"></script>
+<script type="text/javascript" src="plugins/rs-plugin-5/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script type="text/javascript" src="plugins/rs-plugin-5/js/extensions/revolution.extension.navigation.min.js"></script>
+
   <!-- body classes:  -->
   <!-- "boxed": boxed layout mode e.g. <body class="boxed"> -->
   <!-- "pattern-1 ... pattern-9": background patterns for boxed layout mode e.g. <body class="boxed pattern-1"> -->
@@ -225,98 +229,13 @@
                 <!-- ================ -->
                 <div class="header-left clearfix">
                   
-                  <!-- header dropdown buttons -->
-                  <div class="header-dropdown-buttons visible-xs">
-                    <div class="btn-group dropdown">
-                      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="icon-search"></i></button>
-                      <ul class="dropdown-menu dropdown-menu-right dropdown-animation">
-                        <li>
-                          <form role="search" class="search-box margin-clear">
-                            <div class="form-group has-feedback">
-                              <input type="text" class="form-control" placeholder="Search">
-                              <i class="icon-search form-control-feedback"></i>
-                            </div>
-                          </form>
-                        </li>
-                      </ul>
-                    </div>
-                    
-                  </div>
+                 
                   <!-- header dropdown buttons end-->
                   
                   <!-- logo -->
                   <div id="logo" class="logo">
                     <a href="template/index.html"><img id="logo_img" src="http://seeklogo.com/images/M/magic-the-gathering-logo-121CFC67AF-seeklogo.com.gif" alt="The Mana"></a>
                   </div>
-
-                  <!-- Carousel -->
-
-                  <div id="myCarousel" class="carousel slide carousel_size" data-ride="carousel" data-pause="hover">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-    <li data-target="#myCarousel" data-slide-to="3"></li>
-    <li data-target="#myCarousel" data-slide-to="4"></li>
-    <li data-target="#myCarousel" data-slide-to="5"></li>
-    <li data-target="#myCarousel" data-slide-to="6"></li>
-    <li data-target="#myCarousel" data-slide-to="7"></li>
-    <li data-target="#myCarousel" data-slide-to="8"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-<!--  black lotus image -->
-    <div class="item"> 
-    <img src="http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Black%20Lotus">
-    </div>
-<!--  anstral recall image --> 
-     <div class="item">
-     <img src="http://vignette4.wikia.nocookie.net/mtg/images/6/6a/Ancestral_Recall_1E.jpg/revision/latest?cb=20090313144926">
-     </div>
-<!-- time twister image -->    
-    <div class="item">
-    <img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=132&type=card">
-    </div> 
-<!-- time walk image -->
-    <div class="item">
-    <img src="http://static.starcitygames.com/sales/cardscans/MTG/2ED/en/nonfoil/TimeWalk.jpg">
-    </div> 
-<!-- mox jet image --> 
-    <div class="item">
-    <img src="http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Mox%20Jet">
-    </div>
-<!-- mox ruby image -->
-    <div class="item">
-    <img src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=31769750">
-    </div>
-<!-- mox sapphire image
- --> <div class="item">
-    <img src="http://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=331">
-    </div> 
-<!-- mox emerald image -->
-    <div class="item">
-    <img src="http://static.starcitygames.com/sales/cardscans/MTG/LEA/en/nonfoil/MoxEmerald.jpg">
-    </div> 
-<!-- mox pearl image -->
-    <div class="item">
-    <img src="http://static.starcitygames.com/sales/cardscans/MTG/LEB/en/nonfoil/MoxPearl.jpg">
-    </div>
-  </div>
-
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
 
                   <!-- name-and-slogan -->
                   <div class="site-slogan">
@@ -362,162 +281,14 @@
                         <!-- main-menu -->
                         <ul class="nav navbar-nav ">
 
-                          <!-- mega-menu start -->
-                          <li class="dropdown active mega-menu">
-                            <a href="/cards" class="dropdown-toggle" data-toggle="dropdown">Home</a>
-                            <ul class="dropdown-menu">
-                            </ul>
-                          </li>
-                          <!-- mega-menu end -->
-                          <!-- mega-menu start -->
-                          <li class="dropdown  mega-menu">
-                            <a href="/collection_cards" class="dropdown-toggle" data-toggle="dropdown">Collection</a>
-                           
-                          </li>
-                          <!-- mega-menu end -->
-                          <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="/decks">Decks</a>
-                            <ul class="dropdown-menu">
-                              <li class="dropdown ">
-                                <a  class="dropdown-toggle" data-toggle="dropdown" href="#">Headers <span class="badge">v1.2</span></a>
-                                <ul class="dropdown-menu">
-                                  <li ><a href="template/features-headers-default.html">Default/Semi-Transparent</a></li>
-                                  <li ><a href="template/features-headers-default-dark.html">Dark/Semi-Transparent</a></li>
-                                  <li ><a href="template/features-headers-gradient-dark.html">Gradient Dark <span class="badge">v1.2</span></a></li>
-                                  <li ><a href="template/features-headers-gradient-light.html">Gradient Light <span class="badge">v1.2</span></a></li>
-                                  <li ><a href="template/features-headers-classic.html">Classic Light</a></li>
-                                  <li ><a href="template/features-headers-classic-dark.html">Classic Dark</a></li>
-                                  <li ><a href="template/features-headers-colored.html">Colored/Light</a></li>
-                                  <li ><a href="template/features-headers-colored-dark.html">Colored/Dark</a></li>
-                                  <li ><a href="template/features-headers-full-width.html">Full Width</a></li>
-                                  <li ><a href="template/features-headers-offcanvas-left.html">Offcanvas Left Side</a></li>
-                                  <li ><a href="template/features-headers-offcanvas-right.html">Offcanvas Right Side</a></li>
-                                  <li ><a href="template/features-headers-logo-centered.html">Logo Centered</a></li>
-                                  <li ><a href="template/features-headers-slider-top.html">Slider Top</a></li>
-                                  <li ><a href="template/features-headers-simple.html">Simple Static</a></li>
-                                </ul>
-                              </li>
-                              <li class="dropdown ">
-                                <a  class="dropdown-toggle" data-toggle="dropdown" href="#">Sticky Headers <span class="badge">v1.2</span></a>
-                                <ul class="dropdown-menu">
-                                  <li ><a href="template/features-headers-default.html">Default</a></li>
-                                  <li ><a href="template/features-headers-sticky-2.html">Alternative <span class="badge">v1.2</span></a></li>
-                                </ul>
-                              </li>
-                              <li class="dropdown ">
-                                <a  class="dropdown-toggle" data-toggle="dropdown" href="#">Menus</a>
-                                <ul class="dropdown-menu">
-                                  <li ><a href="template/features-headers-default.html">Default/On Hover Menu</a></li>
-                                  <li ><a href="template/features-menus-onhover-no-animations.html">On Hover Menu - No Animations</a></li>
-                                  <li ><a href="template/features-menus-onclick.html">On Click Menu - With Animations</a></li>
-                                  <li ><a href="template/features-menus-onclick-no-animations.html">On Click Menu - No Animations</a></li>
-                                </ul>
-                              </li>
-                              <li class="dropdown ">
-                                <a  class="dropdown-toggle" data-toggle="dropdown" href="#">Footers <span class="badge">v1.2</span></a>
-                                <ul class="dropdown-menu">
-                                  <li ><a href="template/features-footers-default.html#footer">Default</a></li>
-                                  <li ><a href="template/features-footers-contact-form.html#footer">Contact Form</a></li>
-                                  <li ><a href="template/features-footers-contact-form-2.html#footer">Contact Form 2 <span class="badge">v1.2</span></a></li>
-                                  <li ><a href="template/features-footers-google-maps.html#footer">Google Maps</a></li>
-                                  <li ><a href="template/features-footers-subscribe.html#footer">Subscribe Form</a></li>
-                                  <li ><a href="template/features-footers-minimal.html#footer">Minimal</a></li>
-                                  <li ><a href="template/features-footers-links.html#footer">Links <span class="badge">v1.1</span></a></li>
-                                  <li ><a href="template/features-footers-full-width.html#footer">Full Width <span class="badge">v1.2</span></a></li>
-                                </ul>
-                              </li>
-                              <li class="dropdown ">
-                                <a  class="dropdown-toggle" data-toggle="dropdown" href="#">Main Sliders <span class="badge">v1.2</span></a>
-                                <ul class="dropdown-menu">
-                                  <li class="dropdown-header default-bg">SLIDER REVOLUTION 5 - v1.2</li>
-                                  <li ><a href="template/features-sliders-fullscreen.html">Full Screen</a></li>
-                                  <li ><a href="template/features-sliders-fullwidth.html">Full Width</a></li>
-                                  <li ><a href="template/features-sliders-fullwidth-big-height.html">Full Width - Big Height</a></li>
-                                  <li ><a href="template/features-sliders-boxedwidth-light.html">Boxed Width - Light Bg</a></li>
-                                  <li ><a href="template/features-sliders-boxedwidth-dark.html">Boxed Width - Dark Bg</a></li>
-                                  <li ><a href="template/features-sliders-boxedwidth-default.html">Boxed Width - Default Bg</a></li>
-                                  <li ><a href="template/features-sliders-video-background.html">Video Background</a></li>
-                                  <li ><a href="template/features-sliders-text-rotator.html">Text Rotator</a></li>
-                                  <li  class="dropdown ">
-                                  <a  class="dropdown-toggle" data-toggle="dropdown" href="#">Revolution 4</a>
-                                    <ul class="dropdown-menu">
-                                      <li ><a href="template/features-sliders-revolution-4-fullscreen.html">Full Screen</a></li>
-                                      <li ><a href="template/features-sliders-revolution-4-fullwidth.html">Full Width</a></li>
-                                      <li ><a href="template/features-sliders-revolution-4-fullwidth-big-height.html">Full Width - Big Height</a></li>
-                                      <li ><a href="template/features-sliders-revolution-4-boxedwidth-light.html">Boxed Width - Light Bg</a></li>
-                                      <li ><a href="template/features-sliders-revolution-4-boxedwidth-dark.html">Boxed Width - Dark Bg</a></li>
-                                      <li ><a href="template/features-sliders-revolution-4-boxedwidth-default.html">Boxed Width - Default Bg</a></li>
-                                      <li ><a href="template/features-sliders-revolution-4-video-background.html">Video Background</a></li>
-                                      <li ><a href="template/features-sliders-revolution-4-text-rotator.html">Text Rotator</a></li>
-                                    </ul>
-                                  </li>
-                                </ul>
-                              </li>
-                              <li class="dropdown">
-                                <a  class="dropdown-toggle" data-toggle="dropdown" href="#">Email Templates <span class="badge">v1.1</span></a>
-                                <ul class="dropdown-menu">
-                                  <li><a target="_blank" href="template/email_templates/email_template_blue.html">Blue</a></li>
-                                  <li><a target="_blank" href="template/email_templates/email_template_brown.html">Brown</a></li>
-                                  <li><a target="_blank" href="template/email_templates/email_template_cool_green.html">Cool Green</a></li>
-                                  <li><a target="_blank" href="template/email_templates/email_template_dark_cyan.html">Dark Cyan</a></li>
-                                  <li><a target="_blank" href="template/email_templates/email_template_dark_red.html">Dark Red</a></li>
-                                  <li><a target="_blank" href="template/email_templates/email_template_gold.html">Gold</a></li>
-                                  <li><a target="_blank" href="template/email_templates/email_template_gray.html">Gray</a></li>
-                                  <li><a target="_blank" href="template/email_templates/email_template_green.html">Green</a></li>
-                                  <li><a target="_blank" href="template/email_templates/email_template_light_blue.html">Light Blue</a></li>
-                                  <li><a target="_blank" href="template/email_templates/email_template_orange.html">Orange</a></li>
-                                  <li><a target="_blank" href="template/email_templates/email_template_pink.html">Pink</a></li>
-                                  <li><a target="_blank" href="template/email_templates/email_template_purple.html">Purple</a></li>
-                                  <li><a target="_blank" href="template/email_templates/email_template_red.html">Red</a></li>
-                                  <li><a target="_blank" href="template/email_templates/email_template_vivid_red.html">Vivid Red</a></li>
-                                </ul>
-                              </li>
-                              <li class="dropdown ">
-                                <a  class="dropdown-toggle" data-toggle="dropdown" href="#">Pricing Tables</a>
-                                <ul class="dropdown-menu">
-                                  <li ><a href="template/features-pricing-tables-1.html">Pricing Tables 1</a></li>
-                                  <li ><a href="template/features-pricing-tables-2.html">Pricing Tables 2</a></li>
-                                  <li ><a href="template/features-pricing-tables-3.html">Pricing Tables 3</a></li>
-                                </ul>
-                              </li>
-                              <li class="dropdown ">
-                                <a  class="dropdown-toggle" data-toggle="dropdown" href="#">Icons</a>
-                                <ul class="dropdown-menu">
-                                  <li ><a href="template/features-icons-fontawesome.html">Font Awesome</a></li>
-                                  <li ><a href="template/features-icons-fontello.html">Fontello</a></li>
-                                  <li ><a href="template/features-icons-glyphicons.html">Glyphicons</a></li>
-                                </ul>
-                              </li>
-                              <li ><a href="template/features-dark-page.html">Dark Page</a></li>
-                              <li ><a href="template/features-typography.html">Typography</a></li>
-                              <li ><a href="template/features-backgrounds.html">Backgrounds</a></li>
-                              <li ><a href="template/features-grid.html">Grid</a></li>
-                            </ul>
-                          </li>
-                              <li>
-                              </li>
-                            </ul>
-                          </li>
-                        <!-- main-menu end -->
-                        
-                        <!-- header dropdown buttons -->
-                        <div class="header-dropdown-buttons hidden-xs ">
-                          <div class="btn-group dropdown">
-                            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="icon-search"></i></button>
-                            <ul class="dropdown-menu dropdown-menu-right dropdown-animation">
-                              <li>
-                                <form role="search" class="search-box margin-clear">
-                                  <div class="form-group has-feedback">
-                                    <input type="text" class="form-control" placeholder="/cards_search">
-                                    <i class="icon-search form-control-feedback"></i>
-                                  </div>
-                                </form>
-                              </li>
-                            </ul>
-                          </div>
+                          <a href="/cards" class="btn btn-default-transparent btn-md btn-hvr hvr-shutter-in-vertical">Home</a>
                          
-                        </div>
-                        <!-- header dropdown buttons end-->
+                          <a href="/collection_cards" class="btn btn-default-transparent btn-hvr hvr-radial-out">Collection</a>
+              
+                          <a href="/decks" class="btn btn-default-transparent btn-md btn-hvr hvr-radial-in">Decks</a>             
+
+                          <a href="/videos" class="btn btn-default-transparent btn-xl btn-hvr hvr-shutter-out-vertical">Videos</a>            
+                        <!-- main-menu end -->
                         
                       </div>
 
@@ -529,7 +300,7 @@
                 <!-- main-navigation end -->
                 </div>
                 <!-- header-right end -->
-          
+               
               </div>
             </div>
           </div>
