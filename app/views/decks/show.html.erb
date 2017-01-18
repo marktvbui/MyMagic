@@ -5,16 +5,12 @@
 
 
 <center>
-<%= form_tag "/cards_deckcards", method: :get do %>
+<%= form_tag "/cards_search", method: :get do %>
 <%= label_tag :search %>
 <%= text_field_tag :search %>
 <%= submit_tag "Search for cards" %>
 <% end %>
 </center>
-
-<div>
-<%= link_to "Add Cards to Deck", "/deck_cards/new", method: :post %>
-</div>
 
 <div>
 <%= link_to "Edit Deck", "/decks/#{@deck.id}/edit" %>
@@ -23,3 +19,12 @@
 <div>
 <%= link_to "Delete Deck", "/decks/#{@deck.id}", method: :delete %>
 </div>
+
+<% @decks.each do |deck| %>
+  <div>
+  <%= deck.deck_cards.card.name %> 
+  <%= deck.deck_cards.quantity %>
+  <img src="<%= deck.deck_cards.card.image_url %>">
+  </div>
+<% end %>
+

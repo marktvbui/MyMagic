@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   # get "/collection_cards/:id/edit", to: "collection_cards#edit"
   # patch "/collection_cards/:id", to: "collection_cards#update"
   # delete "/collection_cards/:id", to: "collection_cards#destroy"
-  post "/search_collection", to: "collection_cards#search"
 
   resources :collection_cards
 
@@ -27,7 +26,6 @@ Rails.application.routes.draw do
   # patch "/decks/:id", to: "decks#update"
   # delete "/decks/:id", to: "decks#destroy"
   resources :decks
-  post "/search_deck", to: "decks#search"
 
   # get "/deck_cards", to: "deck_cards#index"
   # get "/deck_cards/new", to: "deck_cards#new"
@@ -36,7 +34,6 @@ Rails.application.routes.draw do
   # get "/deck_cards/:id/edit", to: "deck_cards#edit"
   # patch "/deck_cards/:id", to: "deck_cards#update"
   # delete "/deck_cards/:id", to: "deck_cards#destroy"
-  post "/search_deckcards", to: "deck_cards#search"
   resources :deck_cards
 
   devise_for :users, path: '', path_names: {sign_in: 'login', sign_out: 'logout'}, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }

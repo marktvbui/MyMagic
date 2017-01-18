@@ -249,6 +249,75 @@
                     <a href="template/index.html"><img id="logo_img" src="http://seeklogo.com/images/M/magic-the-gathering-logo-121CFC67AF-seeklogo.com.gif" alt="The Mana"></a>
                   </div>
 
+                  <!-- Carousel -->
+
+                  <div id="myCarousel" class="carousel slide carousel_size" data-ride="carousel" data-pause="hover">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#myCarousel" data-slide-to="4"></li>
+    <li data-target="#myCarousel" data-slide-to="5"></li>
+    <li data-target="#myCarousel" data-slide-to="6"></li>
+    <li data-target="#myCarousel" data-slide-to="7"></li>
+    <li data-target="#myCarousel" data-slide-to="8"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+<!--  black lotus image -->
+    <div class="item"> 
+    <img src="http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Black%20Lotus">
+    </div>
+<!--  anstral recall image --> 
+     <div class="item">
+     <img src="http://vignette4.wikia.nocookie.net/mtg/images/6/6a/Ancestral_Recall_1E.jpg/revision/latest?cb=20090313144926">
+     </div>
+<!-- time twister image -->    
+    <div class="item">
+    <img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=132&type=card">
+    </div> 
+<!-- time walk image -->
+    <div class="item">
+    <img src="http://static.starcitygames.com/sales/cardscans/MTG/2ED/en/nonfoil/TimeWalk.jpg">
+    </div> 
+<!-- mox jet image --> 
+    <div class="item">
+    <img src="http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Mox%20Jet">
+    </div>
+<!-- mox ruby image -->
+    <div class="item">
+    <img src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=31769750">
+    </div>
+<!-- mox sapphire image
+ --> <div class="item">
+    <img src="http://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=331">
+    </div> 
+<!-- mox emerald image -->
+    <div class="item">
+    <img src="http://static.starcitygames.com/sales/cardscans/MTG/LEA/en/nonfoil/MoxEmerald.jpg">
+    </div> 
+<!-- mox pearl image -->
+    <div class="item">
+    <img src="http://static.starcitygames.com/sales/cardscans/MTG/LEB/en/nonfoil/MoxPearl.jpg">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
                   <!-- name-and-slogan -->
                   <div class="site-slogan">
                     A Site for Magic the Gathering Fans!
@@ -295,19 +364,19 @@
 
                           <!-- mega-menu start -->
                           <li class="dropdown active mega-menu">
-                            <a href="template/index.html" class="dropdown-toggle" data-toggle="dropdown">Home</a>
+                            <a href="/cards" class="dropdown-toggle" data-toggle="dropdown">Home</a>
                             <ul class="dropdown-menu">
                             </ul>
                           </li>
                           <!-- mega-menu end -->
                           <!-- mega-menu start -->
                           <li class="dropdown  mega-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cards</a>
+                            <a href="/collection_cards" class="dropdown-toggle" data-toggle="dropdown">Collection</a>
                            
                           </li>
                           <!-- mega-menu end -->
                           <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Decks</a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="/decks">Decks</a>
                             <ul class="dropdown-menu">
                               <li class="dropdown ">
                                 <a  class="dropdown-toggle" data-toggle="dropdown" href="#">Headers <span class="badge">v1.2</span></a>
@@ -425,19 +494,10 @@
                               <li ><a href="template/features-grid.html">Grid</a></li>
                             </ul>
                           </li>
-                          <!-- mega-menu start -->
-                          <li class="dropdown  mega-menu narrow">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Marketplace</a>
-                            <ul class="dropdown-menu">
                               <li>
                               </li>
                             </ul>
                           </li>
-                          <!-- mega-menu end -->
-                          <li class="dropdown ">
-                            <a href="template/blog-large-image-right-sidebar.html" class="dropdown-toggle" data-toggle="dropdown">Thoughts</a>
-                          </li>
-                        </ul>
                         <!-- main-menu end -->
                         
                         <!-- header dropdown buttons -->
@@ -448,7 +508,7 @@
                               <li>
                                 <form role="search" class="search-box margin-clear">
                                   <div class="form-group has-feedback">
-                                    <input type="text" class="form-control" placeholder="Search">
+                                    <input type="text" class="form-control" placeholder="/cards_search">
                                     <i class="icon-search form-control-feedback"></i>
                                   </div>
                                 </form>
