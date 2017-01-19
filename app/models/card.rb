@@ -20,6 +20,8 @@ class Card
   end
 
   def self.all
+    # random = rand(0..170)
+    # unirest_cards = Unirest.get("#{ENV['API_URL']}?page=random").body
     unirest_cards = Unirest.get("#{ENV['API_URL']}").body
     @cards = []
     unirest_cards.each do |unirest_card|
