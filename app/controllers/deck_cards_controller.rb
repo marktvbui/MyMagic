@@ -10,14 +10,15 @@ class DeckCardsController < ApplicationController
 
   def create
     @deckcard = DeckCard.find_or_initialize_by(
-      deck_id: params[:deck][:deck_id],
-      card_id: params[:card_id]
+      deck_id: params[:deck][:id],
+      card_id: params[:card_id],
+      quantity: params[:quantity]
     )
-    @deckcard.save
     if @deckcard.save
       flash[:success] = "Card has been added to your Deck!"
-      render :index
+      redirect_to "/decks"
     else
+      puts @deckcard.errors.full_messages
       redirect_to "/cards"
     end
   end

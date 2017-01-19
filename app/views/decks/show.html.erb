@@ -3,15 +3,6 @@
 <h4>Deck color(s): <%= @deck.color %></h4>
 <h4>Deck Description: <%= @deck.description %></h4>
 
-
-<center>
-<%= form_tag "/cards_search", method: :get do %>
-<%= label_tag :search %>
-<%= text_field_tag :search %>
-<%= submit_tag "Search for cards" %>
-<% end %>
-</center>
-
 <div>
 <%= link_to "Edit Deck", "/decks/#{@deck.id}/edit" %>
 </div>
@@ -22,7 +13,8 @@
 
 <% @deck.deck_cards.each do |deck_card| %>
   <div>
-  <%= deck_card.card.name %>
+  <%= deck_card.card.name %>:
+  <%= deck_card.quantity %>
   <img src="<%= deck_card.card.image_url %>">
   </div>
 <% end %>
