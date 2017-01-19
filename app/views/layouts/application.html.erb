@@ -217,23 +217,33 @@
           <div class="container">
             <div class="row">
               <div class="col-md-3 ">
+                <div class="container">
+            <div class="row">
+              <div class="col-md-3 ">
                 <!-- header-left start -->
                 <!-- ================ -->
-                <div class="header-left clearfix">
-                  
-                 
-                  <!-- header dropdown buttons end-->
-                  
-                  <!-- logo -->
-                  <div id="logo" class="logo">
-                    <a href=""><img id="logo_img" src="http://seeklogo.com/images/M/magic-the-gathering-logo-121CFC67AF-seeklogo.com.gif" alt="The Mana"></a>
+                <div class="container">
+                  <div style="float:left;width:25%">
+                    <a href="/cards"> <img src="/home.jpg" class="img-responsive" alt="Responsive image"></a>
+                    </div>
+                  <div style="float:right;width:25%">
+                      <a href="/collection_cards"> <img src="/collection.jpg" class="img-responsive" alt="Responsive image"></a>
                   </div>
+                  <div style="float:right;width:25%">
+                      <a href="/decks"> <img src="/decks.jpg" class="img-responsive" alt="Responsive image"></a>
+                  </div>
+                  <div style="float:right;width:25%">
+                      <a href="/videos"> <img src="/videos.jpg" class="img-responsive" alt="Responsive image"></a>
+                  </div>
+                </div>
 
-                  <!-- name-and-slogan -->
-                  <div class="site-slogan">
-                    A Site for Magic the Gathering Fans!
-                  </div>
-                  <div>
+                <center>
+                <%= form_tag "/cards_search/", method: :get do %>
+                  <%= label_tag :name %>
+                  <%= text_field_tag :name %>
+                  <%= submit_tag "Search" %>
+                <% end %>
+                </center>
                   </div>
                 </div>
                 <!-- header-left end -->
@@ -270,27 +280,7 @@
                         
                       </div>
 
-                      <!-- Collect the nav links, forms, and other content for toggling -->
-                      <div class="collapse navbar-collapse" id="navbar-collapse-1">
-                        <!-- main-menu -->
-                        <ul class="nav navbar-nav ">
-
-                          <a href="/cards" class="btn btn-default-transparent btn-md btn-hvr hvr-shutter-in-vertical">Home</a>
-                         
-                          <a href="/collection_cards" class="btn btn-default-transparent btn-hvr hvr-radial-out">Collection</a>
-              
-                          <a href="/decks" class="btn btn-default-transparent btn-md btn-hvr hvr-radial-in">Decks</a>             
-
-                          <a href="/videos" class="btn btn-default-transparent btn-xl btn-hvr hvr-shutter-out-vertical">Videos</a>            
-                        <!-- main-menu end -->
-                        <center>
-                          <%= form_tag "/cards_search/", method: :get do %>
-                            <%= label_tag :name , ""%>
-                            <%= text_field_tag :name %>
-                            <%= submit_tag "Search" %>
-                          <% end %>
-                        </center>
-                      </div>
+                     
 
                     </div>
                   </nav>
