@@ -22,7 +22,7 @@
   <%= form_tag "/deck_cards", method: :post do %>
     <%= hidden_field_tag :card_id, card.id %>
     Quantity: <%= number_field_tag :quantity %>
-    <%= collection_select(:post, :deck_id, current_user.decks, :id, :name, {:selected => Deck.where(user_id: current_user.id)}) %>
+    <%= collection_select(:deck, :id, current_user.decks, :id, :name) %>
     <%= submit_tag "Add to Deck" %>
   <% end %>
   </div>

@@ -9,8 +9,10 @@ class DeckCardsController < ApplicationController
   end
 
   def create
-    @deckcard = DeckCard.find_or_initialize_by(deck_id: current_user.deck_ids,
-                                               card_id: params[:card_id])
+    @deckcard = DeckCard.find_or_initialize_by(
+      deck_id: params[:deck][:deck_id],
+      card_id: params[:card_id]
+    )
     @deckcard.save
     if @deckcard.save
       flash[:success] = "Card has been added to your Deck!"

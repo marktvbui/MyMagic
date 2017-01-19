@@ -20,11 +20,10 @@
 <%= link_to "Delete Deck", "/decks/#{@deck.id}", method: :delete %>
 </div>
 
-<% @decks.each do |deck| %>
+<% @deck.deck_cards.each do |deck_card| %>
   <div>
-  <%= deck.deck_cards.card.name %> 
-  <%= deck.deck_cards.quantity %>
-  <img src="<%= deck.deck_cards.card.image_url %>">
+  <%= deck_card.card.name %>
+  <img src="<%= deck_card.card.image_url %>">
   </div>
 <% end %>
 
