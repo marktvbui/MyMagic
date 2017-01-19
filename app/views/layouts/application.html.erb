@@ -166,6 +166,7 @@
                   <!-- header top dropdowns start -->
                   <!-- ================ -->
                   <div class="header-top-dropdown text-right">
+                  <% if current_user == nil %>
                     <div class="btn-group">
                       <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
                     </div>
@@ -189,7 +190,7 @@
                             </div>
                             <button type="submit" class="btn btn-gray btn-sm">Log In</button>
                             <span class="pl-5 pr-5">or</span>
-                            <button type="submit" class="btn btn-default btn-sm">Sing Up</button>
+                            <button type="submit" class="btn btn-default btn-sm">Sign Up</button>
                             <ul>
                               <li><a href="#">Forgot your password?</a></li>
                             </ul>
@@ -204,6 +205,11 @@
                       </ul>
                     </div>
                   </div>
+                  <% else %>
+                    <div class="btn-group">
+                      <a href="/logout" class="btn btn-default btn-sm"><i class="fa fa-user pr-10"></i> Logout </a>
+                    </div>
+                  <% end %>
                   <!--  header top dropdowns end -->
                 </div>
                 <!-- header-top-second end -->

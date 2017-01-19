@@ -37,7 +37,7 @@ Rails.application.routes.draw do
   # delete "/deck_cards/:id", to: "deck_cards#destroy"
   resources :deck_cards
 
-  devise_for :users, path: '', path_names: {sign_in: 'login', sign_out: 'logout'}, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, path: '', path_names: {sign_in: '/login', sign_out: '/logout'}, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   resources :users, only: [:show] do
     resources :decks
