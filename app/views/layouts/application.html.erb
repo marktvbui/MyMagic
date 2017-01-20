@@ -216,9 +216,10 @@
                 <!-- header-left start -->
                 <!-- ================ -->
                 <div class="container">
-                  <div style="float:left;width:25%">
-                    <a href="/cards"> <img src="/home.jpg" class="img-responsive" alt="Responsive image"></a>
+                  <div id='cf2' class="changeImage" style="float:left;width:25%">
+                    <a href="/cards"> <img src="/home.jpg" onclick="$(this).addClass('rotated') class="img-responsive" alt="Responsive image" /></a>
                     </div>
+
                   <div style="float:right;width:25%">
                       <a href="/collection_cards"> <img src="/collection.jpg" class="img-responsive" alt="Responsive image"></a>
                   </div>
@@ -226,8 +227,10 @@
                       <a href="/decks"> <img src="/decks.jpg" class="img-responsive" alt="Responsive image"></a>
                   </div>
                   <div style="float:right;width:25%">
-                      <a href="/videos"> <img src="/videos.jpg" class="img-responsive" alt="Responsive image"></a>
+                      <a href="/videos"> <img src="/videos.jpg" class="img-swap" alt="Responsive image"></a>
                   </div>
+
+                  
                 </div>
 
               
@@ -292,8 +295,6 @@
       <footer id="footer" class="clearfix ">
       </footer>
       <!-- footer end -->
-      
-      
     </div>
     <!-- page-wrapper end -->
 
@@ -343,5 +344,6 @@
 
     <!-- Custom Scripts -->
     <script type="/text/javascript" src="/template/js/custom.js"></script>
+
   </body>
 </html>

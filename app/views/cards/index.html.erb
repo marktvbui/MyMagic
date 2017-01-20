@@ -38,8 +38,7 @@ $( function() {
      var user_id = (ui.draggable).data("user-id");
      var card_id = (ui.draggable).data("api-id");
      $.post( "/collection", { user_id: user_id, card_id: card_id, quantity: 1} );
-
-     (ui.draggable).addClass("hiddenCard");
+     (ui.draggable).addClass("animateCard");
     }
   });
 } );
