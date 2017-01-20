@@ -1,14 +1,14 @@
-(function() {
+// (function() {
 
-  "use strict";
+//   "use strict";
 
-  angular.module("app".controller("cardCtrl", function($scope, $http) {
+//   angular.module("app".controller("cardCtrl", function($scope, $http) {
 
-    $scope.setup = function() {
-      $http.get('<%= ENV['API_URL'] %>').then(function(response) {
-        $scope.cards = response.data;
-      });
-    };
-  });
+//     $scope.setup = function() {
+//       $http.get('<%= ENV['API_URL'] %>').then(function(response) {
+//         $scope.cards = response.data;
+//       });
+//     };
+//   });
 
-})();
+// })();

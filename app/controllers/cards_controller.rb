@@ -1,7 +1,7 @@
 class CardsController < ApplicationController
   
   def show
-    @card = Card.find_by(params[:name])
+    @card = Card.find(params[:name])
   end
 
   def index

@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   # get "/collection_cards/:id/edit", to: "collection_cards#edit"
   # patch "/collection_cards/:id", to: "collection_cards#update"
   # delete "/collection_cards/:id", to: "collection_cards#destroy"
-
+  post "/collection", to: "collection_cards#createdroppable"
   resources :collection_cards
 
   # get "/decks", to: "decks#index"
@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   # get "/decks/:id/edit", to: "decks#edit"
   # patch "/decks/:id", to: "decks#update"
   # delete "/decks/:id", to: "decks#destroy"
+
   resources :decks
 
   # get "/deck_cards", to: "deck_cards#index"
