@@ -7,9 +7,22 @@
 }
 
 .rotated {
-  transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -webkit-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
+  transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+}
+
+.hover_img a {
+  position: right;
+}
+.hover_img a span {
+  position: right; display: none; z-index: 99;
+}
+.hover_img a:hover span {
+  position: right;
+  display: block;
+  width: 350px;
+  right: 100px;
 }
