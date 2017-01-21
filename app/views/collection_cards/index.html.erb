@@ -4,9 +4,7 @@
 
 <% @collection_cards.each do |collection_card| %>
   <div class="hover_img">
-
-  <%= collection_card.quantity %> 
-  <a href=""><%= collection_card.card.name %><span><img src="<%= collection_card.card.image_url %>" /></span></a>
+  <%= collection_card.quantity %>:   <a href=""><%= collection_card.card.name %><span><img src="<%= collection_card.card.image_url %>" /></span></a>
   </div>
 <% end %>
 

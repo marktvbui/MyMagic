@@ -24,8 +24,21 @@
   display: block;
   height: 275px;
   width: 175px;
-  position: absolute;
-  left: 180px;
-  bottom: 10px;
-  top: 1px;
+  position: fixed;
+  left: 300px;
+  top: 150px;
 }
+
+// loader css loads an image while website loads
+.loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url('http://pa1.narvii.com/6038/a58e43c020cef91f47067bb41dd7b2e05cdf4d77_hq.gif') 50% 50% no-repeat rgb(249, 249, 249);
+  opacity: .8;
+}
+
+

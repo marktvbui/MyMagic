@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Magic</title>
+    <title>My Magic</title>
     <meta name="description" content="A magic the gathering page">
     <meta name="author" content="htmlcoder.me">
 
@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/template/images/favicon.ico">
+    <link rel="shortcut icon" href="/mtg.ico">
 
     <!-- Web Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -95,6 +95,7 @@
   <!-- "pattern-1 ... pattern-9": background patterns for boxed layout mode e.g. <body class="boxed pattern-1"> -->
   <!-- "transparent-header": makes the header transparent and pulls the banner to top -->
   <body class="no-trans front-page">
+    <div class="loader"></div>
 
     <!-- scrollToTop -->
     <!-- ================ -->
@@ -297,7 +298,13 @@
       <!-- footer end -->
     </div>
     <!-- page-wrapper end -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!--     loads up an image while page loads
+ -->    <script type="text/javascript">
+      $(window).load(function() {
+      $(".loader").fadeOut("slow");
+    });
+    </script>
     <!-- JavaScript files placed at the end of the document so the pages load faster -->
     <!-- ================================================== -->
     <!-- Jquery and Bootstap core js files -->
