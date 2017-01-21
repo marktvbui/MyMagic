@@ -1,0 +1,53 @@
+<div class="carousel-inner">
+    <div class="item active">
+      <div class="col-md-2 col-sm-6 col-xs-12"><a href="#"><img src="http://placehold.it/500/e499e4/fff&text=1" class="img-responsive"></a></div>
+    </div>
+    <div class="item">
+      <div class="col-md-2 col-sm-6 col-xs-12"><a href="#"><img src="http://placehold.it/500/e477e4/fff&text=2" class="img-responsive"></a></div>
+    </div>
+    <div class="item">
+      <div class="col-md-2 col-sm-6 col-xs-12"><a href="#"><img src="http://placehold.it/500/eeeeee&text=3" class="img-responsive"></a></div>
+    </div>
+    <div class="item">
+      <div class="col-md-2 col-sm-6 col-xs-12"><a href="#"><img src="http://placehold.it/500/f4f4f4&text=4" class="img-responsive"></a></div>
+    </div>
+    <div class="item">
+      <div class="col-md-2 col-sm-6 col-xs-12"><a href="#"><img src="http://placehold.it/500/f566f5/333&text=5" class="img-responsive"></a></div>
+    </div>
+    <div class="item">
+      <div class="col-md-2 col-sm-6 col-xs-12"><a href="#"><img src="http://placehold.it/500/f477f4/fff&text=6" class="img-responsive"></a></div>
+    </div>
+    <div class="item">
+      <div class="col-md-2 col-sm-6 col-xs-12"><a href="#"><img src="http://placehold.it/500/eeeeee&text=7" class="img-responsive"></a></div>
+    </div>
+    <div class="item">
+      <div class="col-md-2 col-sm-6 col-xs-12"><a href="#"><img src="http://placehold.it/500/fcfcfc/333&text=8" class="img-responsive"></a></div>
+    </div>
+  </div>
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+</div>
+</div>
+
+
+
+<script>
+$(document).ready(function(){
+$('.carousel[data-type="multi"] .item').each(function(){
+  var next = $(this).next();
+  if (!next.length) {
+    next = $(this).siblings(':first');
+  }
+  next.children(':first-child').clone().appendTo($(this));
+  
+  for (var i=0;i<4;i++) {
+    next=next.next();
+    if (!next.length) {
+        next = $(this).siblings(':first');
+    }
+    
+    next.children(':first-child').clone().appendTo($(this));
+  }
+});
+});
+</script>
