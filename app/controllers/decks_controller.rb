@@ -1,7 +1,7 @@
 class DecksController < ApplicationController
 
   def index
-    @page_title = "Here are your decks!"
+    @page_title = "Here are your decks:"
     sort_column = params[:sort]
     @decks = current_user.decks
   end

@@ -1,5 +1,5 @@
 <div class="pagebackground">
-  <h1 class="page-header"><%= @page_title %></h1>
+  <center><h1 class="page-header page-title-font"><%= @page_title %></h1></center>
   
   <center><a href="/decks/new" class="btn btn-default-transparent btn-sm btn-hvr hvr-radial-out">Create New Deck</a></center>
  
@@ -22,8 +22,8 @@
               <td><div class="deck_name"><%= link_to deck.name, "/decks/#{deck.id}/" %></div></td>
               <td><div class="deck_color"><%= deck.color %></div></td>
               <td><div class="deck_description"><%= deck.description %></div></td>
-              <td><a href="/decks/#{deck.id}/edit" class="btn btn-warning btn-sm">Edit Deck Info <i class="fa fa-folder-open-o pl-10"></i></a></td>
-              <td><a href="/decks/#{deck.id}", method: :delete class="btn radius-50 btn-danger btn-sm">Delete <i class="fa fa-warning pl-10"></i></a></td>
+              <td><a href="/decks/#{deck.id}/edit" class="btn btn-warning btn-sm">Edit Deck Info <i class="fa fa-pencil pl-10"></i></a></td>
+              <td><a href="/decks/#{deck.id}", method: :delete class="btn radius-50 btn-danger btn-sm">Delete <i class="fa fa-trash pl-10"></i></a></td>
             </tr>
           </div>
         <% end %>

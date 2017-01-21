@@ -1,4 +1,84 @@
+<div class="slideshow-container">
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 9</div>
+    <img src="/BlackLotus.jpg" style="width:100%">
+    <div class="text">Black Lotus</div>
+  </div>
 
-<div class="pagebackground">
-Welcome Home
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 9</div>
+    <img src="/AncestralRecall.jpg" style="width:100%">
+    <div class="text">Ancestral Recall</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 9</div>
+    <img src="/TimeTwister.jpeg" style="width:100%">
+    <div class="text">Time Twister</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 9</div>
+    <img src="/Time_Walk_1E.jpg" style="width:100%">
+    <div class="text">Time Walk</div>
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">5 / 9</div>
+    <img src="/MoxJet.jpg" style="width:100%">
+    <div class="text">Mox Jet</div>
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">6 / 9</div>
+    <img src="/MoxEmerald.jpg" style="width:100%">
+    <div class="text">Mox Emerald</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">7 / 9</div>
+    <img src="/MoxPearl.jpg" style="width:100%">
+    <div class="text">Mox Pearl</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">8 / 9</div>
+    <img src="/MoxRuby.jpg" style="width:100%">
+    <div class="text">Mox Ruby</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">9 / 9</div>
+    <img src="/MoxSapphire.jpg" style="width:100%">
+    <div class="text">Mox Sapphire</div>
+  </div>
+
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
+<br>
+
+<div style="text-align:center">
+  <%= 9.times do |x| %>
+  <span class="dot" onclick="currentSlide(x)"></span> 
+  <% end %>
+
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; 
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1} 
+    slides[slideIndex-1].style.display = "block"; 
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
