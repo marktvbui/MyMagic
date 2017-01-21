@@ -1,11 +1,13 @@
+<div class="pagebackground">
 <h2>Chosen Card: <%= @card["name"] %></h2>
 
-<div>
 <img src="<%= @card["image_url"] %>">
-</div>
+
 
 <%= form_tag "/collection_cards", method: :post do %>
     <%= hidden_field_tag :card_id, card.id %>
     Quantity: <%= number_field_tag :quantity %>
     <%= submit_tag "Add to Collection" %>
 <% end %>
+
+</div>

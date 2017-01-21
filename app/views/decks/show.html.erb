@@ -1,65 +1,67 @@
-<h1> <%= @deck.name %> </h1>
+<div class="pagebackground">
+  <h1> <%= @deck.name %> </h1>
 
-<h4>Deck color(s): <%= @deck.color %></h4>
-<h4>Deck Description: <%= @deck.description %></h4>
+  <h4>Deck color(s): <%= @deck.color %></h4>
+  <h4>Deck Description: <%= @deck.description %></h4>
 
-<div>
-<%= link_to "Edit Deck", "/decks/#{@deck.id}/edit" %>
-</div>
-
-<div>
-<%= link_to "Delete Deck", "/decks/#{@deck.id}", method: :delete %>
-</div>
-
-<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>jQuery UI Droppable - Default functionality</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <style>
-  #draggable { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
-  #droppable { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
-  </style>
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( ".draggable" ).draggable();
-    $( "#droppable" ).droppable({
-      drop: function( event, ui ) {
-        $( this )
-          .addClass( "ui-state-highlight" )
-          .find( "p" )
-            .html( "Dropped!" );
-      }
-    });
-  } );
-  </script>
-</head>
-<body>
-<div><center>
-<div class="draggable" class="ui-widget-content">
-  <p>Drag me to my target</p>
-</div>
-
-<div class="draggable" class="ui-widget-content">
-  <p>Drag me to my target</p>
-</div>
- 
-<div id="droppable" class="ui-widget-header">
-  
-  <p>Drop here</p>
-</div>
-</center>
-</div>
-<br>
-<div>
-<% @deck.deck_cards.each do |deck_card| %>
   <div>
-  <%= deck_card.card.name %>:
-  <%= deck_card.quantity %>
-  <img src="<%= deck_card.card.image_url %>">
+  <%= link_to "Edit Deck", "/decks/#{@deck.id}/edit" %>
   </div>
-<% end %>
+
+  <div>
+  <%= link_to "Delete Deck", "/decks/#{@deck.id}", method: :delete %>
+  </div>
+
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Droppable - Default functionality</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <style>
+    #draggable { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+    #droppable { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+    $( function() {
+      $( ".draggable" ).draggable();
+      $( "#droppable" ).droppable({
+        drop: function( event, ui ) {
+          $( this )
+            .addClass( "ui-state-highlight" )
+            .find( "p" )
+              .html( "Dropped!" );
+        }
+      });
+    } );
+    </script>
+  </head>
+  <body>
+  <div><center>
+  <div class="draggable" class="ui-widget-content">
+    <p>Drag me to my target</p>
+  </div>
+
+  <div class="draggable" class="ui-widget-content">
+    <p>Drag me to my target</p>
+  </div>
+   
+  <div id="droppable" class="ui-widget-header">
+    
+    <p>Drop here</p>
+  </div>
+  </center>
+  </div>
+  <br>
+  <div>
+  <% @deck.deck_cards.each do |deck_card| %>
+    <div>
+    <%= deck_card.card.name %>:
+    <%= deck_card.quantity %>
+    <img src="<%= deck_card.card.image_url %>">
+    </div>
+  <% end %>
+  </div>
 </div>
 

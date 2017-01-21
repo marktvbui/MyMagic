@@ -1,25 +1,27 @@
-<h1>Editing this deck: <%= @deck.name %></h1>
-<%= form_tag "/decks/#{@deck.id}", method: :patch do %>
+<div class="pagebackground">
+  <h1>Editing this deck: <%= @deck.name %></h1>
+  <%= form_tag "/decks/#{@deck.id}", method: :patch do %>
 
-<div>
-<%= label_tag :deck_name, "Deck Name:" %>
-<%= text_field_tag :deck_name, @deck.name %>
+  <div>
+  <%= label_tag :deck_name, "Deck Name:" %>
+  <%= text_field_tag :deck_name, @deck.name %>
+  </div>
+
+  <div>
+  <%= label_tag :deck_color, "Deck Color(s)" %>
+  <%= text_field_tag :deck_color, @deck.color %>
+  </div>
+
+  <div>
+  <%= label_tag :deck_description, "Deck Description" %>
+  <%= text_field_tag :deck_description, @deck.description %>
+  </div>
+
+  <div>
+  <%= submit_tag "Change Deck Info" %>
+  </div>
+
+
+
+  <% end %>
 </div>
-
-<div>
-<%= label_tag :deck_color, "Deck Color(s)" %>
-<%= text_field_tag :deck_color, @deck.color %>
-</div>
-
-<div>
-<%= label_tag :deck_description, "Deck Description" %>
-<%= text_field_tag :deck_description, @deck.description %>
-</div>
-
-<div>
-<%= submit_tag "Change Deck Info" %>
-</div>
-
-
-
-<% end %>

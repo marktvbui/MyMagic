@@ -1,18 +1,20 @@
-<h1 class="page-header"><%= @page_title %></h1>
+<div class="pagebackground">
+  <h1 class="page-header"><%= @page_title %></h1>
 
-<%= link_to "Sort by color", "/decks?sort=color" %>
-<br>
-<%= link_to "Sort by name", "/decks?sort=name" %>
-<br>
-<%= link_to "Create New Deck", "/decks/new" %>
-<br>
-<% @decks.each do |deck| %>
-  <div class="col-md-4">
-    <div class="jumbotron">
-      <div class="deck_name"><%= link_to deck.name, "/decks/#{deck.id}/" %></div>
-      <div class="deck_color"><%= deck.color %></div>
-      <div class="deck_description"><%= deck.description %></div>
+  <%= link_to "Sort by color", "/decks?sort=color" %>
+  <br>
+  <%= link_to "Sort by name", "/decks?sort=name" %>
+  <br>
+  <%= link_to "Create New Deck", "/decks/new" %>
+  <br>
+  <% @decks.each do |deck| %>
+    <div class="col-md-4">
+      <div class="jumbotron">
+        <div class="deck_name"><%= link_to deck.name, "/decks/#{deck.id}/" %></div>
+        <div class="deck_color"><%= deck.color %></div>
+        <div class="deck_description"><%= deck.description %></div>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
 
+</div>
