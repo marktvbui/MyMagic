@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-//= reqyure bootstrap-sprockets
+//= require bootstrap-sprockets
 //= require angular
 //= require app
 //= require_tree .

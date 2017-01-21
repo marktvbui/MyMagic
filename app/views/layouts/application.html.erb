@@ -134,9 +134,9 @@
                   </ul>
                  
                   <ul class="list-inline hidden-sm hidden-xs">
-                    <li><i class="fa fa-map-marker pr-5 pl-10"></i>One Mana Way, San Francisco, CA 94112</li>
+                    <li><i class="fa fa-map-marker pr-5 pl-10"></i>One Mana Way, Magic City, CA 27232-1180</li>
                     <li><i class="fa fa-phone pr-5 pl-10"></i>1 MagicMarks</li>
-                    <li><i class="fa fa-envelope-o pr-5 pl-10"></i> mark.tvyybui@gmail.com</li>
+                    <li><i class="fa fa-envelope-o pr-5 pl-10"></i> mark@MyMagic.com</li>
                   </ul>
                 </div>
                 <!-- header-top-first end -->
@@ -204,14 +204,8 @@
         <!-- header-top end -->
         
         <!-- header start -->
-        <!-- classes:  -->
-        <!-- "fixed": enables fixed navigation mode (sticky menu) e.g. class="header fixed clearfix" -->
-        <!-- "dark": dark version of header e.g. class="header dark clearfix" -->
-        <!-- "full-width": mandatory class for the full-width menu layout -->
-        <!-- "centered": mandatory class for the centered logo layout -->
-        <!-- ================ --> 
-        <header class="header  fixed    clearfix headerbackground">
-          
+
+        <header class="header  fixed    clearfix headerbackground">  
           <div class="container">
             <div class="row">
               <div class="col-md-3 ">
@@ -234,10 +228,10 @@
 
               
                 <center>
-                <div class="input-group">
+                <div class="input-group text-center">
                   <%= form_tag("/cards_search/", :method => "get", id: "search-form") do %>
                   <%= text_field_tag :name, params[:name], placeholder: "Search Cards ", class: 'form-control' %>
-                <span class="input-group-btn">
+                <span class="input-group-btn text-center">
                   <%= submit_tag "Search", class: 'btn btn-default' %>
                 </span>
                 <% end %>
@@ -268,9 +262,50 @@
       </div>
         <!-- footer start (Add "dark" class to #footer in order to enable dark  footer) -->
         <!-- ================ -->
-        <footer id="footer" class="clearfix ">
       
-        </footer>
+              <div class="owl-carousel clients">
+                <div class="client">
+                  <a href="#"><img src="http://static.starcitygames.com/sales/cardscans/  MTG/LEA/en/nonfoil/BlackLotus.jpg" alt=""></a>
+                </div>
+                <div class="client">
+                  <a href="#"><img src="http://vignette4.wikia.nocookie.net/mtg/ images/6/6a/Ancestral_Recall_1E.jpg/revision/  latest?cb=20090313144926" alt=""></a>
+                </div>
+                <div class="client">
+                  <a href="#"><img src="http://gatherer.wizards.com/Handlers/ Image.ashx?multiverseid=132&type=card" alt=""></a>
+                </div>
+                <div class="client">
+                  <a href="#"><img src="http://static.starcitygames.com/sales/cardscans/  MTG/2ED/en/nonfoil/TimeWalk.jpg" alt=""></a>
+                </div>
+                <div class="client">
+                  <a href="#"><img src="http://static.starcitygames.com/sales/cardscans/  MTG/LEB/en/nonfoil/MoxJet.jpg" alt=""></a>
+                </div>
+                <div class="client">
+                  <a href="#"><img src="http://static.starcitygames.com/sales/cardscans/  MTG/LEB/en/nonfoil/MoxRuby.jpg" alt=""></a>
+                </div>
+                <div class="client">
+                  <a href="#"><img src="http://gatherer.wizards.com/Handlers/ Image.ashx?type=card&multiverseid=331" alt=""></a>
+                </div>
+                <div class="client">
+                  <a href="#"><img src="http://static.starcitygames.com/sales/cardscans/  MTG/LEA/en/nonfoil/MoxEmerald.jpg" alt=""></a>
+                </div>
+                <div class="client">
+                  <a href="#"><img src="http://static.starcitygames.com/sales/cardscans/  MTG/LEA/en/nonfoil/MoxEmerald.jpg" alt=""></a>
+                </div>
+              </div>
+      <footer id="footer" class="clearfix ">
+        <div class="subfooter headerbackground">
+          <div class="container">
+            <div class="subfooter-inner">
+              <div class="row">
+                <div class="col-md-12">
+                  <p class="text-center">Copyright © 2017 MyMagic <a target="_blank" href=""></a>. All Rights Reserved</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- .subfooter end -->
+      </footer>
         <!-- footer end -->
     <!-- page-wrapper end -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -280,6 +315,7 @@
       $(".loader").fadeOut("slow");
       });
     </script>
+
     <!-- JavaScript files placed at the end of the document so the pages load faster -->
     <!-- ================================================== -->
     <!-- Jquery and Bootstap core js files -->
@@ -316,6 +352,9 @@
 
     <!-- Owl carousel javascript -->
     <script type="/text/javascript" src="/template/plugins/owl-carousel/owl.carousel.js"></script>
+
+<!-- Include js plugin -->
+<script src="owl-carousel/owl.carousel.js"></script>
 
     <!-- SmoothScroll javascript -->
     <script type="/text/javascript" src="/template/plugins/jquery.browser.js"></script>
