@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get "/cards_search", to: "cards#search"
   get "/videos", to: "cards#videos"
+  get "/home", to: "cards#home"
+  
   resources :cards
 
   # get "/collection_cards", to: "collection_cards#index"

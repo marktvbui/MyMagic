@@ -15,14 +15,17 @@
 }
 
 .hover_img a {
-  position: right;
+  position: absolute;
 }
 .hover_img a span {
-  position: right; display: none; z-index: 99;
+  position: absolute; display: none; z-index: 5;
 }
 .hover_img a:hover span {
-  position: right;
   display: block;
-  width: 350px;
-  right: 100px;
+  height: 275px;
+  width: 175px;
+  position: absolute;
+  left: 180px;
+  bottom: 10px;
+  top: 1px;
 }
