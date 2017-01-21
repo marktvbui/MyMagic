@@ -8,8 +8,8 @@
   <%= link_to "Create New Deck", "/decks/new" %>
   <br>
   <% @decks.each do |deck| %>
-    <div class="col-md-4">
-      <div class="jumbotron">
+    <div class="col-sm-4 pagebackground">
+      <div class="well">
         <div class="deck_name"><%= link_to deck.name, "/decks/#{deck.id}/" %></div>
         <div class="deck_color"><%= deck.color %></div>
         <div class="deck_description"><%= deck.description %></div>
