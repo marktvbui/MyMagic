@@ -221,7 +221,8 @@
                   </div>
                   <div style="float:right;width:25%">
                       <a href="/videos"> <img src="/videos.jpg" class="img-swap" alt="Responsive image"></a>
-                  </div>   
+                  </div>  
+
                 </div>
      
                 <center>
@@ -252,7 +253,7 @@
         <% end %>
       <!-- header-container end -->
       <%= yield %>
-      
+
       </div>
         <!-- footer start (Add "dark" class to #footer in order to enable dark  footer) -->
         <!-- ================ -->
@@ -279,8 +280,11 @@
       $(".loader").fadeOut("slow");
       });
     </script>
+ 
 
     <!-- JavaScript files placed at the end of the document so the pages load faster -->
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
     <!-- ================================================== -->
     <!-- Jquery and Bootstap core js files -->
     <script type="/text/javascript" src="/template/plugins/jquery.min.js"></script>
@@ -314,11 +318,6 @@
     <!-- Background Video -->
     <script src="/template/plugins/vide/jquery.vide.js"></script>
 
-    <!-- Owl carousel javascript -->
-    <script type="/text/javascript" src="/template/plugins/owl-carousel/owl.carousel.js"></script>
-
-    <!-- Include js plugin -->
-    <script src="owl-carousel/owl.carousel.js"></script>
 
     <!-- SmoothScroll javascript -->
     <script type="/text/javascript" src="/template/plugins/jquery.browser.js"></script>

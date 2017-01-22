@@ -1,7 +1,6 @@
 class Card
 
   attr_accessor :name, :id, :image_url
-
   def initialize(input)
     @name = input["name"]
     @id = input["id"]
