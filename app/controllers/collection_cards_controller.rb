@@ -56,7 +56,7 @@ class CollectionCardsController < ApplicationController
       flash[:danger] = @collection_cards.errors.full_messages.join("<br>").html_safe
       render "/collection_cards"
     end
-    end
+  
   end
 
   def edit

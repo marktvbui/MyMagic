@@ -1,6 +1,6 @@
 <center>Here's a list of Magic cards</center>
 <div class="pagebackground">
-  <div id="droppable" class="ui-widget-header" style="width: 400px; height: 400px; border: 1px solid black;">
+  <div id="droppable" class="ui-widget-header" style="width: 1000px; height: 400px; border: 1px solid black;">
   <h5>Drop cards here!</h5>
  </div>
 
@@ -8,17 +8,17 @@
     <div>
     <h5>Card Name: <%= card.name %></h5>
     <img class="draggable" src="<%= card.image_url %>" data-api-id="<%= card.id %>" data-user-id="<%= current_user.id %>" >
-     <%= form_tag "/collection_cards", method: :post do %>
-      <%= hidden_field_tag :card_id, card.id %>
-      Quantity: <%= number_field_tag :quantity %>
-      <%= submit_tag "Add to Collection" %>
-    <% end %>
-    <%= form_tag "/deck_cards", method: :post do %>
-      <%= hidden_field_tag :card_id, card.id %>
-      Quantity: <%= number_field_tag :quantity %>
-      <%= collection_select(:deck, :id, current_user.decks, :id, :name) %>
-      <%= submit_tag "Add to Deck" %>
-    <% end %>
+      <%= form_tag "/collection_cards", method: :post do %>
+        <%= hidden_field_tag :card_id, card.id %>
+        Quantity: <%= number_field_tag :quantity %>
+        <%= submit_tag "Add to Collection" %>
+      <% end %>
+      <%= form_tag "/deck_cards", method: :post do %>
+        <%= hidden_field_tag :card_id, card.id %>
+        Quantity: <%= number_field_tag :quantity %>
+        <%= collection_select(:deck, :id, current_user.decks, :id, :name) %>
+        <%= submit_tag "Add to Deck" %>
+      <% end %>
     </div>
   <% end %>
 
@@ -39,7 +39,7 @@
        (ui.draggable).addClass("animateCard");
       }
     });
-  } );
+  });
   </script>
 </div>
 
