@@ -70,6 +70,7 @@ body {
 .page-title-font {
   font-family: fantasy;
   color: red;
+  text-size: 35px;
 }
 // settings for images in carousel on home page
 .carousel-inner {
@@ -119,6 +120,13 @@ body {
   .carousel-inner .active.left { left: -16.7%; }
   .carousel-inner .next        { left:  16.7%; }
   .carousel-inner .prev    { left: -16.7%; }  
+}
+
+.collectionTitle {
+  padding-left: 150px;
+  font-family: fantasy;
+  color: red;
+  font-size: 20px;
 }
 // below are the css needed for collection cards index page
 .collectionCards {

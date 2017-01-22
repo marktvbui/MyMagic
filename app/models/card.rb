@@ -9,12 +9,11 @@ class Card
   end
 
   def self.convert_data(api_data)
-    input_hash = {"id" => api_data["id"], "name" => api_data["name"], "image_url" => api_data["editions"][0]["image_url"], "types" => api["types"]}
+    input_hash = {"id" => api_data["id"], "name" => api_data["name"], "image_url" => api_data["editions"][0]["image_url"], "types" => api_data["types"]}
     return input_hash
   end
   def self.find(name)
     unirest_card = Unirest.get("#{ENV['API_URL']}/#{name}").body
-    # input_hash = {"id" => unirest_card["id"], "name" => unirest_card["name"], "image_url" => unirest_card["editions"][0]["image_url"]}
     @card = Card.new(Card.convert_data(unirest_card))
     return @card
   end
@@ -22,7 +21,6 @@ class Card
   def self.all
     random = rand(0..170)
     unirest_cards = Unirest.get("#{ENV['API_URL']}?page=#{random}").body
-    # unirest_cards = Unirest.get("#{ENV['API_URL']}").body
     @cards = []
     unirest_cards.each do |unirest_card|
       card = Card.new(Card.convert_data(unirest_card))
