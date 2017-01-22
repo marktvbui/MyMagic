@@ -26,7 +26,6 @@ class CollectionCardsController < ApplicationController
 
     if @collection_cards.save
       flash[:success] = "Card has been added"
-      redirect_to :back
     else
       flash[:danger] = @collection_cards.errors.full_messages.join("<br>").html_safe
       redirect_to "/collection_cards"
@@ -52,7 +51,6 @@ class CollectionCardsController < ApplicationController
 
       if @collection_cards.save
         flash[:success] = "Card has been added"
-        redirect_to :back
       else
         flash[:danger] = @collection_cards.errors.full_messages.join("<br>").html_safe
         render "/collection_cards"

@@ -4,83 +4,17 @@
   </center>
 
   <div class="pagebackground">
-    <div class="collectionTitle">Creatures: </div>
-      <div class="collectionCards">
-        <% @collection_cards.each_with_index do |collection_card, index| %>
-          <% if collection_card.card.type[0] == "creature" then %> 
-            <div class="hover_img">
-              <li><%= collection_card.quantity %>:<a href=""><%= collection_card.card.name %><span><img src="<%= collection_card.card.image_url %>" /></span></a>
-              </li>
-            </div>
-          <% end %>
-        <% end %>
-      </div><br>
-    <div class="collectionTitle">Planeswalker: </div>
-      <div class="collectionCards">
-        <% @collection_cards.each do |collection_card| %>
-          <% if collection_card.card.type[0] == "planeswalker" then %> 
-            <div class="hover_img">
-              <li><%= collection_card.quantity %>:<a href=""><%= collection_card.card.name %><span><img src="<%= collection_card.card.image_url %>" /></span></a>
-              </li>
-            </div>
-          <% end %>
-        <% end %>
-      </div><br>
-    <div class="collectionTitle">Artifacts: </div>
-      <div class="collectionCards">
-        <% @collection_cards.each do |collection_card| %>
-          <% if collection_card.card.type[0] == "artifact" then %> 
-            <div class="hover_img">
-              <li><%= collection_card.quantity %>:<a href=""><%= collection_card.card.name %><span><img src="<%= collection_card.card.image_url %>" /></span></a>
-              </li>
-            </div>
-          <% end %>
-        <% end %>
-      </div><br>
-    <div class="collectionTitle">Enchantments: </div>
-      <div class="collectionCards">
-        <% @collection_cards.each do |collection_card| %>
-          <% if collection_card.card.type[0] == "enchantment" then %> 
-            <div class="hover_img">
-              <li><%= collection_card.quantity %>:<a href=""><%= collection_card.card.name %><span><img src="<%= collection_card.card.image_url %>" /></span></a>
-              </li>
-            </div>
-          <% end %>
-        <% end %>
-      </div><br>
-    <div class="collectionTitle">Instants: </div>
-      <div class="collectionCards">
-        <% @collection_cards.each do |collection_card| %>
-          <% if collection_card.card.type[0] == "instant" then %> 
-            <div class="hover_img">
-              <li><%= collection_card.quantity %>:<a href=""><%= collection_card.card.name %><span><img src="<%= collection_card.card.image_url %>" /></span></a>
-              </li>
-            </div>
-          <% end %>
-        <% end %>
-      </div><br>
-    <div class="collectionTitle">Sorceries: </div>
-      <div class="collectionCards">
-        <% @collection_cards.each do |collection_card| %>
-          <% if collection_card.card.type[0] == "sorcery" then %> 
-            <div class="hover_img">
-              <li><%= collection_card.quantity %>:<a href=""><%= collection_card.card.name %><span><img src="<%= collection_card.card.image_url %>" /></span></a>
-              </li>
-            </div>
-          <% end %>
-        <% end %>
-      </div><br>
-    <div class="collectionTitle">Lands: </div>
-      <div class="collectionCards">
-        <% @collection_cards.each do |collection_card| %>
-          <% if collection_card.card.type[0] == "land" then %> 
-            <div class="hover_img">
-              <li><%= collection_card.quantity %>:<a href=""><%= collection_card.card.name %><span><img src="<%= collection_card.card.image_url %>" /></span></a>
-              </li>
-            </div>
-          <% end %>
-        <% end %>
-      </div><br>
+    <% @collection_cards.sorted_by_type.each do |type, collection_cards| %>
+    <div class="collectionTitle"><%= type.capitalize %>: </div>
+    <div class="collectionCards">
+      <% collection_cards.each do |collection_card| %>
+          <div class="hover_img">
+            <li><%= collection_card[:quantity] %>:<a href=""><%= collection_card[:card].name %><span><img src="<%= collection_card[:card].image_url %>" /></span></a>
+            </li>
+          </div>
+      <% end %>
+    </div><br>
+    <% end %>
   </div>
 </body>
 
