@@ -1,14 +1,15 @@
 class Card
 
-  attr_accessor :name, :id, :image_url
+  attr_accessor :name, :id, :image_url, :type
   def initialize(input)
     @name = input["name"]
     @id = input["id"]
     @image_url = input["image_url"]
+    @type = input["types"]
   end
 
   def self.convert_data(api_data)
-    input_hash = {"id" => api_data["id"], "name" => api_data["name"], "image_url" => api_data["editions"][0]["image_url"]}
+    input_hash = {"id" => api_data["id"], "name" => api_data["name"], "image_url" => api_data["editions"][0]["image_url"], "types" => api["types"]}
     return input_hash
   end
   def self.find(name)
