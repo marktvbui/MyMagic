@@ -21,7 +21,7 @@ body {
   -webkit-transform: rotate(-90deg);
   -o-transform: rotate(-90deg);
 }
-// hover_img allows mouse over to load image of card
+// hover_img refers to index of collection cards allows mouse over to load image of card
 .hover_img a {
   position: absolute;
 }
@@ -33,11 +33,27 @@ body {
   height: 300px;
   width: 200px;
   position: fixed;
-  left: 150px;
+  left: 1050px;
+  top: 350px;
+  bottom: 50px;
+}
+
+// hover_img allows mouse over to load image of card
+.hover_img2 a {
+  position: absolute;
+}
+.hover_img2 a span {
+  position: absolute; display: none; z-index: 5;
+}
+.hover_img2 a:hover span {
+  display: block;
+  height: 300px;
+  width: 200px;
+  position: fixed;
+  left: 300px;
   top: 200px;
   bottom: 150px;
 }
-
 // loader css loads an image while website loads
 .loader {
   position: fixed;
@@ -104,6 +120,13 @@ body {
   .carousel-inner .next        { left:  16.7%; }
   .carousel-inner .prev    { left: -16.7%; }  
 }
+// below are the css needed for collection cards index page
+.collectionCards {
+  overflow:hidden;
+  width: 1000px;
+}
 
-
-
+  .collectionCards li {
+    float: left;
+    padding-left: 150px;
+  }

@@ -58,7 +58,7 @@ class DecksController < ApplicationController
   def search
     @search_term = params[:search]
     @decks = Deck.where("name LIKE ?", "%#{@search_term}")
-    render :index
+    render :show
   end
 
 

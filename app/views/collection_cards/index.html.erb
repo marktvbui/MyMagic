@@ -1,11 +1,10 @@
 <div class="pagebackground">
 <center><h1><div class="page-title-font">Personal Collection</h1></center>
 
-  <%= link_to "Sort by Name", "collection_cards?sort=name" %><br>
-  <div class="pagebackground">
+  <div class="pagebackground collectionCards">
   <% @collection_cards.each do |collection_card| %>
     <div class="hover_img">
-    <%= collection_card.quantity %>:<a href=""><%= collection_card.card.name %><span><img src="<%= collection_card.card.image_url %>" /></span></a>
+    <li><%= collection_card.quantity %>:<a href=""><%= collection_card.card.name %><span><img src="<%= collection_card.card.image_url %>" /></span></a></li>
     </div>
   <% end %>
   </div>

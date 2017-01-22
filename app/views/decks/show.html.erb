@@ -1,15 +1,19 @@
 <div class="pagebackground">
-  <h1> <%= @deck.name %> </h1>
+  <h1><center><div class="page-title-font"><%= @deck.name %> </h1></center>
 
-  <h4>Deck color(s): <%= @deck.color %></h4>
-  <h4>Deck Description: <%= @deck.description %></h4>
-
+    <h4>Deck color(s): <%= @deck.color %></h4>
+    <h4>Deck Description: <%= @deck.description %></h4>
+    <center><div class="input-group text-center">
+      <%= form_tag("/deckcards_search", :method => "get", id: "search-form") do %>
+      <%= text_field_tag :name, params[:name], placeholder: "Search Cards ", class: 'form-control' %>
+      <span class="input-group-btn text-center">
+        <%= submit_tag "Search", class: 'btn btn-default' %>
+      </span>
+      <% end %>
+    </div></center>
+  </div>
   <div>
   <%= link_to "Edit Deck", "/decks/#{@deck.id}/edit" %>
-  </div>
-
-  <div>
-  <%= link_to "Delete Deck", "/decks/#{@deck.id}", method: :delete %>
   </div>
 
   <meta charset="utf-8">
@@ -19,49 +23,87 @@
     <link rel="stylesheet" href="/resources/demos/style.css">
     <style>
     #draggable { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
-    #droppable { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
+    #droppable { width: 750px; height: 350px; padding: 0.5em; float: left; margin: 10px; }
     </style>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-    $( function() {
-      $( ".draggable" ).draggable();
-      $( "#droppable" ).droppable({
-        drop: function( event, ui ) {
-          $( this )
-            .addClass( "ui-state-highlight" )
-            .find( "p" )
-              .html( "Dropped!" );
-        }
-      });
-    } );
-    </script>
+  
   </head>
   <body>
-  <div><center>
-  <div class="draggable" class="ui-widget-content">
-    <p>Drag me to my target</p>
-  </div>
 
+  <div>
   <div class="draggable" class="ui-widget-content">
     <p>Drag me to my target</p>
   </div>
    
-  <div id="droppable" class="ui-widget-header">
-    
-    <p>Drop here</p>
-  </div>
-  </center>
   </div>
   <br>
-  <div>
-  <% @deck.deck_cards.each do |deck_card| %>
-    <div>
-    <%= deck_card.card.name %>:
-    <%= deck_card.quantity %>
-    <img src="<%= deck_card.card.image_url %>">
-    </div>
-  <% end %>
-  </div>
-</div>
 
+      <!-- main-container start -->
+      <!-- ================ -->
+      <section class="main-container pagebackground">
+
+        <div class="container">
+          <div class="row">
+
+            <!-- main start -->
+            <!-- ================ -->
+            <div class="main col-md-8 col-lg-offset-1 col-md-push-4 col-lg-push-3">
+
+           
+              <!--   Droppable box -->         
+              <h1 class="page-title">Drop Cards here</h1>
+              <div class="separator-2"></div>
+                <div id="droppable" class="ui-widget-header">
+                </div>
+
+            </div>
+            <!-- main end -->
+
+            <!-- sidebar start -->
+            <!-- ================ -->
+            <aside class="col-md-4 col-lg-3 col-md-pull-8 col-lg-pull-9">
+              <div class="sidebar">
+                <div class="block clearfix">
+                  <h3 class="title">Current Deck</h3>
+                  <div class="separator-2"></div>
+                  <nav>
+                    <ul class="nav nav-pills nav-stacked">
+                      <div>
+                      <% @deck.deck_cards.each do |deck_card| %>
+                        <div class="hover_img2"><%= deck_card.quantity %>:<a href=""><%= deck_card.card.name %><span><img src="<%= deck_card.card.image_url %>" /></span></a>
+                        </div>
+                      <% end %>
+                    </div>
+                    </ul>
+                  </nav>
+                </div>
+                
+              </div>
+            </aside>
+            <!-- sidebar end -->
+
+          </div>
+        </div>
+      </section>
+
+ <script>
+  $( function() {
+    $( ".draggable" ).draggable();
+    $( "#droppable" ).droppable({
+      drop: function( event, ui ) {
+        $( this )
+          .addClass( "ui-state-highlight" )
+          .find( "p" )
+            .html( "Dropped!" );
+       // do something with the draggable item
+       var user_id = (ui.draggable).data("user-id");
+       var card_id = (ui.draggable).data("api-id");
+       $.post( "/decks/#{deck.id}", { user_id: user_id, card_id: card_id, quantity: 1} );
+       (ui.draggable).addClass("animateCard");
+      }
+    });
+  } );
+  </script>
+
+</div>
