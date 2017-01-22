@@ -6,10 +6,10 @@
   <div class="pagebackground">
     <div class="collectionTitle">Creatures: </div>
       <div class="collectionCards">
-        <% @collection_cards.each do |collection_card| %>
+        <% @collection_cards.each_with_index do |collection_card, index| %>
           <% if collection_card.card.type[0] == "creature" then %> 
             <div class="hover_img">
-              <li><%= collection_card.quantity %>: <a href=""><%= collection_card.card.name %><span><img src="<%= collection_card.card.image_url %>" /></span></a>
+              <li><%= collection_card.quantity %>:<a href=""><%= collection_card.card.name %><span><img src="<%= collection_card.card.image_url %>" /></span></a>
               </li>
             </div>
           <% end %>
@@ -20,7 +20,7 @@
         <% @collection_cards.each do |collection_card| %>
           <% if collection_card.card.type[0] == "planeswalker" then %> 
             <div class="hover_img">
-              <li><%= collection_card.quantity %>: <a href=""><%= collection_card.card.name %><span><img src="<%= collection_card.card.image_url %>" /></span></a>
+              <li><%= collection_card.quantity %>:<a href=""><%= collection_card.card.name %><span><img src="<%= collection_card.card.image_url %>" /></span></a>
               </li>
             </div>
           <% end %>
@@ -31,7 +31,7 @@
         <% @collection_cards.each do |collection_card| %>
           <% if collection_card.card.type[0] == "artifacts" then %> 
             <div class="hover_img">
-              <li><%= collection_card.quantity %>: <a href=""><%= collection_card.card.name %><span><img src="<%= collection_card.card.image_url %>" /></span></a>
+              <li><%= collection_card.quantity %>:<a href=""><%= collection_card.card.name %><span><img src="<%= collection_card.card.image_url %>" /></span></a>
               </li>
             </div>
           <% end %>
@@ -42,7 +42,7 @@
         <% @collection_cards.each do |collection_card| %>
           <% if collection_card.card.type[0] == "enchantment" then %> 
             <div class="hover_img">
-              <li><%= collection_card.quantity %>: <a href=""><%= collection_card.card.name %><span><img src="<%= collection_card.card.image_url %>" /></span></a>
+              <li><%= collection_card.quantity %>:<a href=""><%= collection_card.card.name %><span><img src="<%= collection_card.card.image_url %>" /></span></a>
               </li>
             </div>
           <% end %>
@@ -53,7 +53,7 @@
         <% @collection_cards.each do |collection_card| %>
           <% if collection_card.card.type[0] == "instant" then %> 
             <div class="hover_img">
-              <li><%= collection_card.quantity %>: <a href=""><%= collection_card.card.name %><span><img src="<%= collection_card.card.image_url %>" /></span></a>
+              <li><%= collection_card.quantity %>:<a href=""><%= collection_card.card.name %><span><img src="<%= collection_card.card.image_url %>" /></span></a>
               </li>
             </div>
           <% end %>
@@ -64,7 +64,7 @@
         <% @collection_cards.each do |collection_card| %>
           <% if collection_card.card.type[0] == "sorcery" then %> 
             <div class="hover_img">
-              <li><%= collection_card.quantity %>: <a href=""><%= collection_card.card.name %><span><img src="<%= collection_card.card.image_url %>" /></span></a>
+              <li><%= collection_card.quantity %>:<a href=""><%= collection_card.card.name %><span><img src="<%= collection_card.card.image_url %>" /></span></a>
               </li>
             </div>
           <% end %>
@@ -75,7 +75,7 @@
         <% @collection_cards.each do |collection_card| %>
           <% if collection_card.card.type[0] == "land" then %> 
             <div class="hover_img">
-              <li><%= collection_card.quantity %>: <a href=""><%= collection_card.card.name %><span><img src="<%= collection_card.card.image_url %>" /></span></a>
+              <li><%= collection_card.quantity %>:<a href=""><%= collection_card.card.name %><span><img src="<%= collection_card.card.image_url %>" /></span></a>
               </li>
             </div>
           <% end %>
@@ -83,3 +83,4 @@
       </div><br>
   </div>
 </body>
+
