@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "/videos", to: "cards#videos"
   get "/home", to: "cards#home"
   get "/", to: "cards#home"
+  get "/test", to: "cards#test"
   
   resources :cards
 

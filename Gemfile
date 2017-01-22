@@ -33,6 +33,7 @@ gem 'unirest'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
+gem 'owlcarousel-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

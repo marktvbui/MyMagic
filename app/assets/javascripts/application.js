@@ -14,6 +14,7 @@
 //= require bootstrap-sprockets
 //= require angular
 //= require app
+//= require owl.carousel
 //= require_tree .
 
 
