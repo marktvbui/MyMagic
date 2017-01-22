@@ -14,8 +14,9 @@ class CollectionCardsController < ApplicationController
   end
 
   def create 
-    @collection_cards = CollectionCard.find_or_initialize_by(user_id: current_user.id,
-                                                             card_id: params[:card_id]
+    @collection_cards = CollectionCard.find_or_initialize_by(
+                                                user_id: current_user.id,
+                                                card_id: params[:card_id]
                                                              )
     if @collection_cards.id
       @collection_cards.quantity = @collection_cards.quantity + params[:quantity].to_i
@@ -28,9 +29,8 @@ class CollectionCardsController < ApplicationController
       redirect_to :back
     else
       flash[:danger] = @collection_cards.errors.full_messages.join("<br>").html_safe
-      render :new
+      redirect_to "/collection_cards"
     end
-
   end
 
   def createdroppable
@@ -40,23 +40,24 @@ class CollectionCardsController < ApplicationController
     respond_to do |format|
       format.json  { render :json => "Api request received!" }
 
-    @collection_cards = CollectionCard.find_or_initialize_by(user_id: current_user.id,
-                                                             card_id: params[:card_id]
+      @collection_cards = CollectionCard.find_or_initialize_by(
+                                          user_id: current_user.id,
+                                          card_id: params[:card_id]
                                                              )
-    if @collection_cards.id
-      @collection_cards.quantity = @collection_cards.quantity + params[:quantity].to_i
-    else
-      @collection_cards.quantity = params[:quantity]
-    end
+      if @collection_cards.id
+        @collection_cards.quantity = @collection_cards.quantity + params[:quantity].to_i
+      else
+        @collection_cards.quantity = params[:quantity]
+      end
 
-    if @collection_cards.save
-      flash[:success] = "Card has been added"
-      redirect_to :back
-    else
-      flash[:danger] = @collection_cards.errors.full_messages.join("<br>").html_safe
-      render "/collection_cards"
+      if @collection_cards.save
+        flash[:success] = "Card has been added"
+        redirect_to :back
+      else
+        flash[:danger] = @collection_cards.errors.full_messages.join("<br>").html_safe
+        render "/collection_cards"
+      end
     end
-  
   end
 
   def edit
