@@ -8,7 +8,11 @@
     <div>
     <h5>Card Name: <%= card.name %></h5>
     <img class="draggable" src="<%= card.image_url %>" data-api-id="<%= card.id %>" data-user-id="<%= current_user.id %>" >
-
+     <%= form_tag "/collection_cards", method: :post do %>
+      <%= hidden_field_tag :card_id, card.id %>
+      Quantity: <%= number_field_tag :quantity %>
+      <%= submit_tag "Add to Collection" %>
+    <% end %>
     <%= form_tag "/deck_cards", method: :post do %>
       <%= hidden_field_tag :card_id, card.id %>
       Quantity: <%= number_field_tag :quantity %>

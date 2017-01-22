@@ -29,7 +29,7 @@
     <div class="collectionTitle">Artifacts: </div>
       <div class="collectionCards">
         <% @collection_cards.each do |collection_card| %>
-          <% if collection_card.card.type[0] == "artifacts" then %> 
+          <% if collection_card.card.type[0] == "artifact" then %> 
             <div class="hover_img">
               <li><%= collection_card.quantity %>:<a href=""><%= collection_card.card.name %><span><img src="<%= collection_card.card.image_url %>" /></span></a>
               </li>
