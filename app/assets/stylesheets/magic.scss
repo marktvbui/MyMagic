@@ -15,7 +15,12 @@ body {
   background-image: url('http://sohaza.com/wp-content/uploads/2015/06/xem-nhung-hinh-anh-hoat-hinh-naruto-dep-nhat-15.jpg') !important;
 }
 
-.collectionIndex{
+.searchForm {
+  background-color: white;
+  background-image: url('searchicon.png');
+
+}
+.collectionIndex {
   background-image: url('http://i.imgur.com/vjwu0.jpg');
   background-repeat: no-repeat; 
   -webkit-background-size: cover; 
@@ -88,7 +93,7 @@ body {
 
 
 .page-title-font {
-  font-family: fantasy;
+  font: fantasy;
   color: red;
   font-size: 35px;
 }

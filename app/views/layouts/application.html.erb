@@ -231,7 +231,7 @@
                 <div class="input-group text-center">
                   <%= form_tag("/cards_search", :method => "get", id: "search-form") do %>
                   <%= text_field_tag :name, params[:name], placeholder: "Search Cards ", class: 'form-control' %>
-                <span class="input-group-btn text-center">
+                <span class="input-group-btn text-center searchForm">
                   <%= submit_tag "Search", class: 'btn btn-default' %>
                 </span>
                 <% end %>
