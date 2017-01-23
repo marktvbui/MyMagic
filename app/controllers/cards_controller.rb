@@ -6,10 +6,13 @@ class CardsController < ApplicationController
 
   def index
     @cards = Card.all
+    @decks = current_user.decks
   end
 
   def search
     @cards = Card.where(name: params[:name])
     render :index
   end
+
+  
 end

@@ -3,6 +3,7 @@
 
     <h4>Deck color(s): <%= @deck.color %></h4>
     <h4>Deck Description: <%= @deck.description %></h4>
+    
     <center><div class="input-group text-center">
       <%= form_tag("/deckcards_search", :method => "get", id: "search-form") do %>
       <%= text_field_tag :name, params[:name], placeholder: "Search Cards ", class: 'form-control' %>
@@ -12,6 +13,14 @@
       <% end %>
     </div></center>
   </div>
+
+<% if !@cards.nil? %>
+ <% @cards.each do |card| %>
+    <img class="draggable" style="float: left" src="<%= card.image_url %>" data-api-id="<%= card.id %>" data-user-id="<%= current_user.id %>" >
+  <% end %>
+
+<% end %>
+
   <div>
   <%= link_to "Edit Deck", "/decks/#{@deck.id}/edit" %>
   </div>
@@ -31,12 +40,6 @@
   </head>
   <body>
 
-  <div>
-  <div class="draggable" class="ui-widget-content">
-    <p>Drag me to my target</p>
-  </div>
-   
-  </div>
   <br>
 
       <!-- main-container start -->
@@ -52,7 +55,7 @@
 
            
               <!--   Droppable box -->         
-              <h1 class="page-title">Drop Cards here</h1>
+              <h1 class="page-title" style="color: red;">Add Cards Here</h1>
               <div class="separator-2"></div>
                 <div id="droppable" class="ui-widget-header">
                 </div>

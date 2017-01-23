@@ -43,6 +43,10 @@ class Card
     return @cards
   end
 
+  def self.get(response)
+    response = Unirest.get("#{ENV['API_URL']}/typeahead")
+  end
+
   def destroy
     card = Unirest.delete("#{ENV['API_URL']}/CARDS/#{:name}.json")
   end

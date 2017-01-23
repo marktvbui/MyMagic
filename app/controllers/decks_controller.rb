@@ -56,8 +56,8 @@ class DecksController < ApplicationController
   end
 
   def search
-    @search_term = params[:search]
-    @decks = Deck.where("name LIKE ?", "%#{@search_term}")
+    @deck = Deck.find_by(id: params[:id]) 
+    @cards = Card.where(name: params[:name])
     render :show
   end
 

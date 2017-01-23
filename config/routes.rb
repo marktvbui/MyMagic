@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get "/home", to: "cards#home"
   get "/", to: "cards#home"
   get "/test", to: "cards#test"
-  get "/deckcards_search", to: "decks#search"
+  get "/deckcards_search", to: "decks#show"
   
   resources :cards
 

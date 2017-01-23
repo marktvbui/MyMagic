@@ -1,5 +1,10 @@
-<h1>You searched for: <%= @search_term %></h1>
+search page for individual deck cards
 
-<%= @decks.each do |deck| %>
-  <h2>Deck: <%= deck.name %></h2>
-<% end %>
+ <center><div class="input-group text-center">
+      <%= form_tag("/deckcards_search", :method => "get", id: "search-form") do %>
+      <%= text_field_tag :name, params[:name], placeholder: "Search Cards ", class: 'form-control' %>
+      <span class="input-group-btn text-center">
+        <%= submit_tag "Search", class: 'btn btn-default' %>
+      </span>
+      <% end %>
+    </div></center>

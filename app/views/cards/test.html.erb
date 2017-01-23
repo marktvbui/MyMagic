@@ -1,32 +1,19 @@
-<div class="owl-carousel">
-<div class="owl-carousel clients carousel-autoplay">
-                <div class="client">
-                  <a href="#"><img src="/AncestralRecall.jpg" alt=""></a>
-                </div>
-                <div class="client">
-                  <a href="#"><img src="/BlackLotus.jpg" alt=""></a>
-                </div>
-                <div class="client">
-                  <a href="#"><img src="/MoxEmerald.jpg" alt=""></a>
-                </div>
-                <div class="client">
-                  <a href="#"><img src="/MoxJet.jpg" alt=""></a>
-                </div>
-                <div class="client">
-                  <a href="#"><img src="/MoxPearl.jpg" alt=""></a>
-                </div>
-                <div class="client">
-                  <a href="#"><img src="/MoxRuby.jpg" alt=""></a>
-                </div>
-                <div class="client">
-                  <a href="#"><img src="/MoxSapphire.jpg" alt=""></a>
-                </div>
-                <div class="client">
-                  <a href="#"><img src="/TimeTwister.jpeg" alt=""></a>
-                </div>
+      <div class="col-sm-3" ng-controller="quickSearchCtrl">
+        <datalist id="card_names" ng-if="cardName"><option ng-repeat="card in searchedCards">{{card.name}}</option></datalist>
+        <div data-spy="affix" class="silver-background sidebar-margins" data-offset-bottom="300">
+          <div class="center-text"><h3>Quick Card Lookup</h3></div>
+          <div class="">
+            <div class="center-text">
+              <div class="search-image">
+                <img ng-src="{{foundCardImageURL}}" ng-if="cardName" class="img-responsive center-margin">
               </div>
+       
+              <div class="search-copy">
+                <h4 class="left-indent">Card Name:</h4>
+                <p><input list="card_names" ng-model="cardName" ng-keyup="lookUpCard(cardName)" class="form-control" autocomplete="on"></p>
+                <button ng-if="cardName" clipboard text="foundCardName" on-copied="success()" on-error="fail(err)" class="btn btn-default"><span class="glyphicon glyphicon-copy"></span> Copy Card Name to Clipboard</button>
+                <h3 ng-if="cardName" class="center-text">{{foundCardName}}</h3>
+              </div>
+            </div>
+          </div>
 </div>
-
-<script>
-$(".owl-carousel").owlCarousel();
-</script>

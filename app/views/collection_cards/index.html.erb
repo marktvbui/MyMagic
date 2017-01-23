@@ -1,9 +1,9 @@
 <body>
   <center>
-  <div class="page-title-font pagebackground">Personal Collection</div>
+  <div class="page-title-font">Personal Collection</div>
   </center>
 
-  <div class="pagebackground">
+  <div class="collectionIndex">
     <% @collection_cards.sorted_by_type.each do |type, collection_cards| %>
     <div class="collectionTitle"><%= type.capitalize %>: </div>
     <div class="collectionCards">

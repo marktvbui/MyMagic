@@ -2,11 +2,30 @@ body {
   background-image: url(/hexabump_@2X.png) !important;
   font-family: 'Philosopher', sans-serif;
 }
+.homeTitle {
+  font-family: fantasy;
+  font-size: 200px;
+  color: red;
+  background-image: url('http://wallpapercave.com/wp/mlGFLlB.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 
+}
 .headerbackground {
-  background-image: url(/footer_lodyas.png) !important;
+  background-image: url('http://sohaza.com/wp-content/uploads/2015/06/xem-nhung-hinh-anh-hoat-hinh-naruto-dep-nhat-15.jpg') !important;
 }
 
+.collectionIndex{
+  background-image: url('http://i.imgur.com/vjwu0.jpg');
+  background-repeat: no-repeat; 
+  -webkit-background-size: cover; 
+  -moz-background-size: cover; 
+  -o-background-size: cover; 
+  background-size: cover; 
+}
+.collectionCards {
+  font-size: 15px;
+}
 .pagebackground {
   background-image: url(/hexabump_@2X.png) !important;
 }
@@ -31,10 +50,10 @@ body {
 }
 .hover_img a:hover span {
   display: block;
-  height: 300px;
-  width: 200px;
+  height: 350px;
+  width: 250px;
   position: fixed;
-  left: 1050px;
+  left: 1150px;
   top: 350px;
   bottom: 50px;
 }
