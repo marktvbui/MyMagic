@@ -14,5 +14,8 @@ class CardsController < ApplicationController
     render :index
   end
 
+  def test
+    @cards = Card.all
+  end
   
 end
