@@ -1,35 +1,30 @@
 <center style="font-family: 'Fantasy', sans-serif; font-size: 30px; color: blue;">Search Results:</center>
 
 <div class="pagebackground">
-  <div class="droppable" class="ui-widget-header" style="width: 300px; height: 325px; border: 1px solid black; float: left;" data-box-type="collection">
-    <h5 style="font-family: 'Fantasy', sans-serif; font-size: 25px; color: green;">Add to collection</h5>
-  </div>
-
-  <% current_user.decks.each do |deck| %>
-    <div class="droppable" id="droppable-<%= deck.id %>" class=" droppable ui-widget-header" data-deck-id="<%= deck.id %>" style="width: 300px; height: 325px; border: 1px solid black; float: left;">
-    <h5 style="font-family: 'Fantasy', sans-serif; font-size: 25px; color: green;">Add to <%= deck.name %></h5>
-  </div>
-  <% end %>
 
 <div class="searchResults">
  <div id="myCarousel" class="carousel slide carousel_size" data-ride="carousel" data-pause="hover">
+  <ol class="carousel-indicators">
+     <% (@cards.length - 1).times do |i| %>
+    <li data-target="#myCarousel" data-slide-to="<%= i + 1 %>"></li>
+    <% end %>
+  </ol>
 
-  <div class="carousel-inner" role="listbox">
+  <div class="carousel-inner indexCarousel" role="listbox">
     <div class="item active"> 
-      <% @cards[0..7].each do |card| %>
+      <% @cards[0..3].each do |card| %>
       <img class="draggable" style="float: left" src="<%= card.image_url %>" data-api-id="<%= card.id %>" data-user-id="<%= current_user.id %>" >
       <% end %>
     </div>
 
     <div class="item">
       <% @cards.each_with_index do |card, i| %>
-        <% if i % 8 == 0 %>
-          </div>
+        <% if i % 4 == 0 %>
+    </div>
           <div class="item">
         <% end %>
-            <img class="draggable" style="float: left" src="<%= card.image_url %>" data-api-id="<%= card.id %>" data-user-id="<%= current_user.id %>" >
+            <img class="draggable img-responsive center-block" style="float: left" src="<%= card.image_url %>" data-api-id="<%= card.id %>" data-user-id="<%= current_user.id %>" >
       <% end %>
-
     </div>
   </div>
 
@@ -44,7 +39,20 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+
 </div>
+
+<div>
+  <div class="droppable collectionDroppable" class="ui-widget-header" style="width: 300px; height: 325px; border: 1px solid black; float: left;" data-box-type="collection">
+    <h5 style="font-family: 'Fantasy', sans-serif; font-size: 25px; color: green; text-align: center;">Add to collection</h5>
+  </div>
+
+  <% current_user.decks.each do |deck| %>
+    <div class="droppable deckDroppable" id="droppable-<%= deck.id %>" class=" droppable ui-widget-header" data-deck-id="<%= deck.id %>" style="width: 300px; height: 325px; border: 1px solid black; float: left;">
+    <h5 style="font-family: 'Fantasy', sans-serif; font-size: 25px; color: green; text-align: center;">Add to <%= deck.name %></h5>
+  </div>
+  <% end %>
+<div>
 
   <script>
   $( function() {
@@ -75,9 +83,3 @@
 </div>
 
 
- var deck_id = (ui.droppable).data("deck-id"); add this to line 30
- if (deck_id = null){
- $.post("/decks/deck_id", {card_id: card_id, deck_id = deck_id, quantity: 1})
-} else {
-  line 30
-}

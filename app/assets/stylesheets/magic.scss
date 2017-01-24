@@ -1,25 +1,27 @@
 body {
-  background-image: url(/hexabump_@2X.png) !important;
   font-family: 'Philosopher', sans-serif;
 }
 .homeTitle {
   font-family: fantasy;
   font-size: 200px;
   color: red;
-  background-image: url('http://wallpapercave.com/wp/mlGFLlB.jpg');
+  background-image: url('http://img12.deviantart.net/3f61/i/2016/132/2/8/fire_and_ice_by_jojoesart-da28aqe.jpg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
 }
+
 .headerbackground {
-  background-image: url('http://sohaza.com/wp-content/uploads/2015/06/xem-nhung-hinh-anh-hoat-hinh-naruto-dep-nhat-15.jpg') !important;
+  background-image: url('http://wallpapercave.com/wp/mlGFLlB.jpg') ;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 .searchResult {
   position: relative;
 }
 .searchForm {
   background-color: white;
-  background-image: url('searchicon.png');
+  background-image: url('');
 
 }
 .collectionIndex {
@@ -34,7 +36,14 @@ body {
   font-size: 15px;
 }
 .pagebackground {
-  background-image: url(/hexabump_@2X.png) !important;
+  background-image: url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ4SyPi7vzQwZnOMxLtMRnAgndynyK6qMoSjyjb6V-ON56irA9o');
+  background-repeat: no-repeat; 
+  -webkit-background-size: cover; 
+  -moz-background-size: cover; 
+  -o-background-size: cover; 
+  background-size: cover; 
+  background-size: 100% 100%;
+
 }
 
 .animateCard {
@@ -93,14 +102,13 @@ body {
   opacity: .8;
 }
 
-
 .page-title-font {
   font: fantasy;
   color: red;
   font-size: 35px;
 }
 // settings for images in carousel on home page
-.carousel-inner {
+.homeCarousel {
   margin: auto;
   display: block;
   position: fixed;
@@ -166,11 +174,32 @@ body {
     padding-left: 150px;
   }
 
+.indexCarousel  {
+   max-height: 300px;
+   margin: auto;
+}
 
+.droppable {
 
+}
 
+.deckDroppable {
+  background-image: url('http://static.tumblr.com/0eca9df375c88785a79e8ba5e6343198/6r7kq9c/kban9yjwj/tumblr_static_1lxpo4zgk36s08cc80kwoc008.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%
+}
 
+.collectionDroppable {
+  background-image: url('http://pre09.deviantart.net/d76a/th/pre/i/2012/092/8/9/magic_the_gathering__mana_symbols_by_nikoru_s__nobody-d4nouoc.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
 
+.table-responsive {
+  font-family: 'Merienda' , cursive; 
+  color: red !important;
+  text-size: 35px !important;
+}
 
 // .draggable { 
 //   z-index: 100;
