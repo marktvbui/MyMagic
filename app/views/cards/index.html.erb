@@ -1,7 +1,8 @@
 <div class="pagebackground">
   <center style="font-family: 'Fantasy', sans-serif; font-size: 30px; color: blue;">Search Results:</center>
 
-
+<div class="container text-center">
+<div class="carousel slide row" data-ride="carousel" data-type="multi" data-interval="2000" id="fruitscarousel">
   <div class="container">
     <div class="container text-center">
       <div class="carousel slide row" data-ride="carousel" data-type="multi" data-interval="2000" id="fruitscarousel" data-pause="hover">
@@ -22,8 +23,6 @@
           </div> 
         <% end %>
       </div>
-  <!--   </div> -->
-
 
       <!-- Left and right controls -->
     <a class="left carousel-control" href="#fruitscarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
@@ -32,6 +31,10 @@
   </div>
 </div>
 </div>
+</div>
+</div>
+</div>
+
   <div>
     <div class="droppable collectionDroppable" class="ui-widget-header" style="width: 300px; height: 325px; border: 1px solid black; float: left;" data-box-type="collection">
       <h5 style="font-family: 'Fantasy', sans-serif; font-size: 25px; color: green; text-align: center;">Add to collection</h5>
@@ -50,7 +53,7 @@
 
   <script>
   $( function() {
-    $( ".draggable" ).draggable();
+    $( ".draggable" ).draggable({stack: "div"});
     $( ".droppable" ).droppable({
       drop: function( event, ui ) {
         $( this )

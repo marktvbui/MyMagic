@@ -76,7 +76,7 @@ body {
 
 // hover_img allows mouse over to load image of card
 .hover_img2 a {
-  position: absolute;
+  position: relative;
 }
 .hover_img2 a span {
   position: absolute; display: none; z-index: 5;
@@ -86,9 +86,8 @@ body {
   height: 300px;
   width: 200px;
   position: fixed;
-  left: 300px;
-  top: 200px;
-  bottom: 150px;
+  left: 350px;
+  bottom: 50px;
 }
 // loader css loads an image while website loads
 .loader {

@@ -16,4 +16,21 @@ class DeckCard < ApplicationRecord
   def card
     return Card.find(card_id)
   end
+
+  def self.sorted_by_type
+    types = {
+      "creature" => [], 
+      "planeswalker" => [], 
+      "artifact" => [], 
+      "enchantment" => [], 
+      "instant" => [], 
+      "sorcery" => [], 
+      "land" => [], 
+    }
+    all.each do |deckcard|
+      current_card = deckcard.card
+      types[deckcard.type[0]] << {card: deckcard, quantity: deckcard.quantity}
+    end
+    return types
+  end
 end
