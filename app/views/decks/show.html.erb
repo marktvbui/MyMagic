@@ -1,8 +1,8 @@
 <div class="pagebackground">
-  <h1><center><div class="page-title-font"><%= @deck.name %> </h1></center>
+  <h1><center><div class="defaultCSS"><%= @deck.name %> </h1></center>
 
-    <h4>Deck color(s): <%= @deck.color %></h4>
-    <h4>Deck Description: <%= @deck.description %></h4>
+    <h4 class="defaultCSS">Deck color(s): <%= @deck.color %></h4>
+    <h4 class="defaultCSS">Deck Description: <%= @deck.description %></h4>
     
    
   </div>
@@ -32,7 +32,7 @@
       <!-- ================ -->
      <section class="main-container">
 
-        <div class="container">
+        <div class="container defaultCSS">
           <div class="row">
 
             <!-- main start -->
@@ -41,22 +41,34 @@
 
               <!-- page-title start -->
               <!-- ================ -->
-              <h1 class="page-title">Main Deck</h1>
+              <h1 class="deckShowTitle defaultCSS">Main Deck</h1>
               <div class="separator-2"></div>
-              <!-- page-title end -->             
+              <!-- page-title end -->   
+                       
                 <% @deck.deck_cards.each do |deck_card| %>
-                  <div class="hover_img2"><%= deck_card.quantity %>:<a href=""><%= deck_card.card.name %><span><img src="<%= deck_card.card.image_url %>" /></span></a>
+                <div class="hover_img2"><a href=""><%= deck_card.card.name %><span><img src="<%= deck_card.card.image_url %>" /></span></a>
+                </div>
+                <div class="input-group spinner">
+                  <input type="text" class="form-control" value=<%= deck_card.quantity %>>
+                  <div class="input-group-btn-vertical">
+                    <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                   <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
                   </div>
+                </div>
                 <% end %>
+                
               </div>
             <!-- main end -->
+
+
+
 
             <!-- sidebar start -->
             <!-- ================ -->
             <aside class="col-md-4 col-lg-3 col-lg-offset-1">
               <div class="sidebar">
                 <div class="block clearfix">
-                  <h3 class="title">Sideboard</h3>
+                  <h3 class="title defaultCSS">Sideboard</h3>
                   <div class="separator-2"></div>
                   <nav>
                   </nav>
@@ -71,3 +83,13 @@
       </section>
 
 </div>
+<script>
+(function ($) {
+  $('.spinner .btn:first-of-type').on('click', function() {
+    $('.spinner input').val( parseInt($('.spinner input').val(), 10) + 1);
+  });
+  $('.spinner .btn:last-of-type').on('click', function() {
+    $('.spinner input').val( parseInt($('.spinner input').val(), 10) - 1);
+  });
+})(jQuery);
+</script>

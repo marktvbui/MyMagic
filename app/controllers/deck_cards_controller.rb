@@ -40,7 +40,7 @@ class DeckCardsController < ApplicationController
 
   def update
     @deckcard = DeckCard.find_by(id: params[:id])
-    @deckcard.assign_attributes(name: params[:name],
+    @deckcard.assign_attributes(quantity: params[:quantity],
                                 )
     @deckcard.save
     flash[:info] = "Current deck has been updated!"
