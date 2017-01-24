@@ -14,7 +14,9 @@ body {
 .headerbackground {
   background-image: url('http://sohaza.com/wp-content/uploads/2015/06/xem-nhung-hinh-anh-hoat-hinh-naruto-dep-nhat-15.jpg') !important;
 }
-
+.searchResult {
+  position: relative;
+}
 .searchForm {
   background-color: white;
   background-image: url('searchicon.png');
@@ -163,3 +165,19 @@ body {
     float: left;
     padding-left: 150px;
   }
+
+
+
+
+
+
+
+// .draggable { 
+//   z-index: 100;
+// }
+
+
+// .droppable {
+//   z-index: 1;
+// }
+

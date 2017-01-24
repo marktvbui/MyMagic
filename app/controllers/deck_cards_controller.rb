@@ -14,13 +14,20 @@ class DeckCardsController < ApplicationController
       card_id: params[:card_id],
       quantity: params[:quantity]
     )
-    if @deckcard.save
-      flash[:success] = "Card has been added to your Deck!"
-      redirect_to "/decks"
-    else
-      puts @deckcard.errors.full_messages
-      redirect_to "/cards"
+
+    respond_to do |format|
+      if @deckcard.save
+        format.html do
+          flash[:success] = "Card has been added to your Deck!"
+          redirect_to "/decks"
+        end
+        format.json  { render :json => "Card added to deck!" }
+      else
+        format.html { redirect_to "/cards" }
+        format.json { render :json => "Card could not be added!" }
+      end
     end
+
   end
   
   def show

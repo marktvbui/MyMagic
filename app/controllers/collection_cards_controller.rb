@@ -33,9 +33,6 @@ class CollectionCardsController < ApplicationController
   end
 
   def createdroppable
-    puts "==" * 100
-    puts params
-
     respond_to do |format|
       format.json  { render :json => "Api request received!" }
 

@@ -1,24 +1,55 @@
 <center style="font-family: 'Fantasy', sans-serif; font-size: 30px; color: blue;">Search Results:</center>
 
 <div class="pagebackground">
-  <div id="droppable" class="ui-widget-header" style="width: 300px; height: 325px; border: 1px solid black; float: left;">
+  <div class="droppable" class="ui-widget-header" style="width: 300px; height: 325px; border: 1px solid black; float: left;" data-box-type="collection">
     <h5 style="font-family: 'Fantasy', sans-serif; font-size: 25px; color: green;">Add to collection</h5>
   </div>
 
   <% current_user.decks.each do |deck| %>
-    <div id="droppable-<%= deck.id %>" class=" droppable ui-widget-header" data-deck-id="<%= deck.id %>" style="width: 300px; height: 325px; border: 1px solid black; float: left;">
+    <div class="droppable" id="droppable-<%= deck.id %>" class=" droppable ui-widget-header" data-deck-id="<%= deck.id %>" style="width: 300px; height: 325px; border: 1px solid black; float: left;">
     <h5 style="font-family: 'Fantasy', sans-serif; font-size: 25px; color: green;">Add to <%= deck.name %></h5>
   </div>
   <% end %>
 
-  <% @cards.each do |card| %>
-    <img class="draggable" style="float: left" src="<%= card.image_url %>" data-api-id="<%= card.id %>" data-user-id="<%= current_user.id %>" >
-  <% end %>
- 
+<div class="searchResults">
+ <div id="myCarousel" class="carousel slide carousel_size" data-ride="carousel" data-pause="hover">
+
+  <div class="carousel-inner" role="listbox">
+    <div class="item active"> 
+      <% @cards[0..7].each do |card| %>
+      <img class="draggable" style="float: left" src="<%= card.image_url %>" data-api-id="<%= card.id %>" data-user-id="<%= current_user.id %>" >
+      <% end %>
+    </div>
+
+    <div class="item">
+      <% @cards.each_with_index do |card, i| %>
+        <% if i % 8 == 0 %>
+          </div>
+          <div class="item">
+        <% end %>
+            <img class="draggable" style="float: left" src="<%= card.image_url %>" data-api-id="<%= card.id %>" data-user-id="<%= current_user.id %>" >
+      <% end %>
+
+    </div>
+  </div>
+
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
   <script>
   $( function() {
     $( ".draggable" ).draggable();
-    $( "#droppable" ).droppable({
+    $( ".droppable" ).droppable({
       drop: function( event, ui ) {
         $( this )
           .addClass( "ui-state-highlight" )
@@ -27,13 +58,26 @@
        // do something with the draggable item
        var user_id = (ui.draggable).data("user-id");
        var card_id = (ui.draggable).data("api-id");
-       $.post( "/collection", { user_id: user_id, card_id: card_id, quantity: 1} );
+       var deck_id = $( this ).data("deck-id");
+
+       if ($( this ).data("box-type") == "collection") {
+         $.post( "/collection", { user_id: user_id, card_id: card_id, quantity: 1} );
+       }
+       else {
+         $.post("/deck_cards", {card_id: card_id, deck: {id: deck_id}, quantity: 1});
+       }
+
        (ui.draggable).addClass("animateCard");
       }
     });
   });
   </script>
 </div>
- var deck_id = (ui.droppable).data("deck-id");
- $.post("/decks/deck_id", {card_id: card_id, deck_id = deck_id, quantity: 1})
 
+
+ var deck_id = (ui.droppable).data("deck-id"); add this to line 30
+ if (deck_id = null){
+ $.post("/decks/deck_id", {card_id: card_id, deck_id = deck_id, quantity: 1})
+} else {
+  line 30
+}
