@@ -1,4 +1,5 @@
 class CollectionCardsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     sort_colum = params[:sort]

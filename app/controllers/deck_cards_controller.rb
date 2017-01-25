@@ -1,4 +1,5 @@
 class DeckCardsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @deckcard = current_user.decks.deckcard
