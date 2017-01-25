@@ -116,6 +116,7 @@
       <!-- header-container start -->
       <div class="header-container">
       <div class="homeTitle"><center> My Magic </center></div>
+
         <!-- header-top start -->
         <!-- classes:  -->
         <!-- "dark": dark version of header top e.g. class="header-top dark" -->
@@ -234,24 +235,27 @@
                   <div style="float:right;width:25%">
                       <a href="/videos"> <img src="/videos.jpg" onmouseover="this.src='/videos2.jpg'" onmouseout="this.src='/videos.jpg'" class="img-swap" alt="Responsive image"></a>
                   </div>  
-
                 </div>
-     
-                <center>
-                <div class="input-group text-center">
-                  <%= form_tag("/cards_search", :method => "get", id: "search-form") do %>
-                  <%= text_field_tag :name, params[:name], placeholder: "Search Cards ", class: 'form-control' %>
-                <span class="input-group-btn text-center searchForm">
-                  <%= submit_tag "Search", class: 'btn btn-default' %>
-                </span>
-                <% end %>
-                </div>
-                </center>
               </div>
             </div>
           </div>
-          
-
+            <!-- name-and-slogan -->
+          <center>
+            <br>
+            <div class="site-slogan" style="font-family: fantasy; color: red; font-weight: bold; font-size: 40px;">
+              A Site to organize your Cards
+            </div>
+          </center>
+          <center>   
+            <div class="input-group text-center">
+              <%= form_tag("/cards_search", :method => "get", id: "search-form") do %>
+              <%= text_field_tag :name, params[:name], placeholder: "Search Cards ", class: 'form-control' %>
+              <span class="input-group-btn text-center searchForm">
+                <%= submit_tag "Search", class: 'btn btn-default' %>
+              </span>
+              <% end %>
+            </div>
+          <center>
 
 
         </header>
