@@ -167,6 +167,14 @@
                       <button type="button" class="btn dropdown-toggle btn-default btn-sm" data-toggle="dropdown"><i class="fa fa-lock pr-10"><a href="/login"></i> Login</button> (form tag here)
                       <ul class="dropdown-menu dropdown-menu-right dropdown-animation">
                         <li>
+  <%= form_for(:user, :url => session_path(:user)) do |f| %>
+  <%= f.text_field :email %>
+  <%= f.password_field :password %>
+  <%= f.check_box :remember_me %>
+  <%= f.label :remember_me %>
+  <%= f.submit 'Sign in' %>
+  <%= link_to "Forgot your password?", new_password_path(:user) %>
+<% end %>
                           <form class="login-form margin-clear">
                             <div class="form-group has-feedback">
                               <label class="control-label">Username</label>

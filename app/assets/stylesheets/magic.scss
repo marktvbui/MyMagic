@@ -29,12 +29,14 @@ body {
 
 }
 .collectionIndex {
-  background-image: url('http://i.imgur.com/vjwu0.jpg');
+  background-image: url('https://s-media-cache-ak0.pinimg.com/originals/65/2e/f0/652ef07a2098db4a66b92c6f818900fe.jpg');
   background-repeat: no-repeat; 
-  -webkit-background-size: cover; 
-  -moz-background-size: cover; 
-  -o-background-size: cover; 
-  background-size: cover; 
+  background-size: 100% 100%;
+  opacity: 1;
+  // -webkit-background-size: cover; 
+  // -moz-background-size: cover; 
+  // -o-background-size: cover; 
+  // background-size: cover; 
 }
 .collectionCards {
   font-size: 15px;
@@ -64,6 +66,9 @@ body {
 // hover_img refers to index of collection cards allows mouse over to load image of card
 .hover_img a {
   position: absolute;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
 }
 .hover_img a span {
   position: absolute; display: none; z-index: 5;
