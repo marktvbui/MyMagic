@@ -1,5 +1,5 @@
 class CardsController < ApplicationController
- before_action :authenticate_user!  
+  before_action :authenticate_user!  
   def show
     @card = Card.find(params[:name])
   end
