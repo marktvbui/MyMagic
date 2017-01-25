@@ -1,10 +1,14 @@
 class DecksController < ApplicationController
-  before_action :authenticate_user!, :except => [:index, :show]
+  before_action :authenticate_user!, :except => [:index]
 
   def index
     @page_title = "Here are your decks:"
     sort_column = params[:sort]
-    @decks = current_user.decks
+    if current_user != nil  
+      @decks = current_user.decks
+    else 
+      @decks = Deck.all
+    end
   end
 
   def new

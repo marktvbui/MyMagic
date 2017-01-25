@@ -210,8 +210,19 @@ body {
   text-size: 35px !important;
 }
 
+.carousel-control.left .glyphicon {
+    left: 0;
+    margin-left: 0;
+    margin-top: 125px;
 
+}
 
+.carousel-control .glyphicon-arrow-right, .carousel-control .icon-prev {
+  right: 0; //or you can increase this
+  margin-right: 0;
+  margin-top: 125px;
+
+}
 
 // .draggable { 
 //   z-index: 100;
