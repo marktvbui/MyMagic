@@ -113,7 +113,7 @@ body {
 }
 
 .page-title-font {
-  font: Fantasy;
+  font: 'Merienda', cursive;
   color: blue;
   font-size: 35px;
 }
@@ -234,6 +234,13 @@ body {
   font-family: fantasy;
   color: white;
   font-size: 50px;
+}
+
+.iframe {
+  height: 300px !important;
+  width: 500px !important;
+  resize: both !important;
+  overflow: auto !important;
 }
 
 
