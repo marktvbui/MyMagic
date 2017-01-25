@@ -2,36 +2,51 @@
   <form>
     <h1 style="font-family: 'Merienda', cursive; color: blue">Editing this deck: <%= @deck.name %></h1>
     <%= form_tag "/decks/#{@deck.id}", method: :patch do %>
-      <p>
-      <div style="font-size: 20px; font-family: 'Merienda', cursive; color: red;">
-        <label for="a"><%= label_tag :deck_name, "Deck Name: " %></label>
-        <input id="a"><%= text_field_tag :deck_name, @deck.name %>
-      </div>
-      </p>
-      <p>
-      <div style="font-size: 20px; font-family: 'Merienda', cursive; color: blue;">
-        <label for="b"><%= label_tag :deck_color, "Deck Color(s): " %></label>
-        <input id="b"><%= text_field_tag :deck_color, @deck.color %>
-      </div>
-      </p>
-      <p>
-      <div style="font-size: 20px; font-family: 'Merienda', cursive; color: red;">
-        <lable for="c"><%= label_tag :deck_description, "Deck Description: " %></lable>
-        <input id="c"><%= text_field_tag :deck_description, @deck.description %>
-      </div>
-      </p>
-      <p>
-      <div style="font-size: 15px; font-family: 'Merienda', Cursive; color: blue;">
-      <%= submit_tag "Change Deck Info" %>
-      </div>
-      </p>
+      <div class ="row">
+        <div class="col-xs-6 col-sm-3" style="font-size: 20px; font-family: 'Merienda', cursive; color: red;">
+          <%= label_tag :deck_name, "Deck Name: " %>
+          <%= text_field_tag :deck_name, @deck.name %>
+        </div>
+       
+        <div class="col-xs-6 col-sm-3" style="font-size: 20px; font-family: 'Merienda', cursive; color: blue;">
+          <%= label_tag :deck_color, "Deck Color(s): " %>
+          <%= text_field_tag :deck_color, @deck.color %>
+        </div>
+       
+        <div class="col-xs-6 col-sm-3" style="font-size: 20px; font-family: 'Merienda', cursive; color: red;">
+          <%= label_tag :deck_description, "Deck Description: " %>
+          <%= text_field_tag :deck_description, @deck.description %>
+        </div>
+        
+        <div style="font-size: 15px; border-radius: 20px; font-family: 'Merienda', Cursive; color: blue;">
+          <a href="#" class="myButton"><%= submit_tag "Change Deck Info" %></a>
+        </div>
+      </container>
     <% end %>
   </form>
 </div>
 
 <style>
-.form  { display: table;      }
-.p     { display: table-row;  }
-.label { display: table-cell; text-align: right}
-.input { display: table-cell; }
+.myButton {
+  background-color:blue;
+  -moz-border-radius:38px;
+  -webkit-border-radius:38px;
+  border-radius:38px;
+  border:1px solid #18ab29;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  padding:13px 20px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #2f6627;
+}
+.myButton:hover {
+  background-color:red;
+}
+.myButton:active {
+  position:relative;
+  top:1px;
+}
 </style>
