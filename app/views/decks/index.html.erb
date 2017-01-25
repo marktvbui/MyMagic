@@ -1,27 +1,27 @@
 <div class="pagebackground">
   <center><h1 class="page-header page-title-font" style="font-family: Fantasy; color: blue;"><%= @page_title %></h1></center>
   
-  <center><a href="/decks/new" class="btn btn-default-transparent btn-sm btn-hvr hvr-radial-out">Create New Deck</a></center>
+  <center><a href="/decks/new" class="btn btn-default-transparent btn-sm btn-hvr hvr-radial-out createDeck">Create New Deck</a></center>
  
   <br>
   <div class="table-responsive">
     <table class="table">
       <thead>
         <tr>
-          <th style="font-family: Merienda; color: red; size: 35px;">Deck name</th>
-          <th style="font-family: Merienda; color: red; size: 35px;">Deck color(s)</th>
-          <th style="font-family: Merienda; color: red; size: 35px;">Description</th>
-          <th style="font-family: Merienda; color: red; size: 35px;">Edit Deck Info</th>
-          <th style="font-family: Merienda; color: red; size: 35px;">Delete</th>
+          <th style="font-family: 'Merienda', cursive; color: red; font-weight: bold; size: 25px;">Deck name</th>
+          <th style="font-family: 'Merienda', cursive; color: red; font-weight: bold; size: 25px;">Deck color(s)</th>
+          <th style="font-family: 'Merienda', cursive; color: red; font-weight: bold; size: 25px;">Description</th>
+          <th style="font-family: 'Merienda', cursive; color: red; font-weight: bold; size: 25px;">Edit Deck Info</th>
+          <th style="font-family: 'Merienda', cursive; color: red; font-weight: bold; size: 25px;">Delete</th>
         </tr>
       </thead>
       <tbody>
         <% @decks.each do |deck| %>
-          <div class="pagebackground">
+          <div class="deckIndex">
             <tr>
-              <td><div class="deck_name"><%= link_to deck.name, "/decks/#{deck.id}/" %></div></td>
-              <td><div class="deck_color"><%= deck.color %></div></td>
-              <td><div class="deck_description"><%= deck.description %></div></td>
+              <td><div class="deck_name" style="font-family: 'Meriend', cursive;  color: white; font-weight: bold; font-size: 25px;"><%= link_to deck.name, "/decks/#{deck.id}/" %></div></td>
+              <td><div class="deck_color" style="color: white; font-weight: bold; font-size: 25px;"><%= deck.color %></div></td>
+              <td><div class="deck_description" style="color: white; font-weight: bold; font-size: 25px;"><%= deck.description %></div></td>
               <td><a href="/decks/<%= deck.id %>}/edit" class="btn btn-warning btn-sm">Edit Deck Info <i class="fa fa-pencil pl-10"></i></a></td>
               <td><a href="/decks/<%= deck.id %>}", method: :delete class="btn radius-50 btn-danger btn-sm">Delete <i class="fa fa-trash pl-10"></i></a></td>
             </tr>

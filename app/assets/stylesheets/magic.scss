@@ -2,7 +2,7 @@ body {
   font-family: 'Philosopher', sans-serif;
 }
 .defaultCSS {
-  font-family: fantasy;
+  font-family: 'Merienda', cursive;
   color: red;
 }
 .homeTitle {
@@ -42,7 +42,7 @@ body {
   font-size: 15px;
 }
 .pagebackground {
-  background-image: url('https://s-media-cache-ak0.pinimg.com/originals/65/2e/f0/652ef07a2098db4a66b92c6f818900fe.jpg');
+  background-image: url('http://orig11.deviantart.net/7752/f/2013/029/f/c/fire_meets_water_by_markkang-d5t4uwy.png');
   background-repeat: no-repeat; 
   -webkit-background-size: cover; 
   -moz-background-size: cover; 
@@ -86,6 +86,8 @@ body {
 // hover_img allows mouse over to load image of card
 .hover_img2 a {
   position: relative;
+  font-size: 15px;
+  font-weight: bold;
 }
 .hover_img2 a span {
   position: absolute; display: none; z-index: 5;
@@ -95,7 +97,7 @@ body {
   height: 300px;
   width: 200px;
   position: fixed;
-  left: 350px;
+  left: 400px;
   bottom: 50px;
 }
 // loader css loads an image while website loads
@@ -111,8 +113,8 @@ body {
 }
 
 .page-title-font {
-  font: fantasy;
-  color: red;
+  font: Fantasy;
+  color: blue;
   font-size: 35px;
 }
 // settings for images in carousel on home page
@@ -226,8 +228,14 @@ body {
   right: 0; //or you can increase this
   margin-right: 0;
   margin-top: 125px;
-
 }
+
+.createDeck {
+  font-family: fantasy;
+  color: white;
+  font-size: 50px;
+}
+
 
 // .draggable { 
 //   z-index: 100;
