@@ -1,28 +1,23 @@
 <div class="pagebackground">
   <center style="font-family: 'Fantasy', sans-serif; font-size: 30px; color: blue;">Search Results:</center>
 
-<div class="container text-center">
-<div class="carousel slide row" data-ride="carousel" data-type="multi" data-interval="2000" id="fruitscarousel">
-  <div class="container">
+
     <div class="container text-center">
       <div class="carousel slide row" data-ride="carousel" data-type="multi" data-interval="2000" id="fruitscarousel" data-pause="hover">
-    <ol class="carousel-indicators">
-       <% (@cards.length - 1).times do |i| %>
-      <li data-target="#myCarousel" data-slide-to="<%= i + 1 %>"></li>
-      <% end %>
-    </ol>
 
     <div class="carousel-inner indexCarousel" role="listbox">
       <div class="item active"> 
-        <div class="col-md-3 col-sm-4 col-xs-12"><a href="#"><img src="/BlackLotus.jpg"></a></div>     
+        <div class="col-md-3 col-sm-4 col-xs-12"><a href="#"><img src="/BlackLotus.jpg"></a>
+        </div>     
       </div>
 
-      <div class="item">
-        <% @cards.each do |card| %>
-          <div class="col-md-3 col-sm-4 col-xs-12"><img class="draggable img-responsive center-block" src="<%= card.image_url %>" data-api-id="<%= card.id %>" data-user-id="<%= current_user.id %>">
+      <% @cards.each do |card| %>
+        <div class="item">
+          <div class="col-md-3 col-sm-4 col-xs-12">
+            <img class="draggable img-responsive center-block" src="<%= card.image_url %>" data-api-id="<%= card.id %>" data-user-id="<%= current_user.id %>">  
           </div> 
-        <% end %>
-      </div>
+        </div>
+      <% end %>
 
       <!-- Left and right controls -->
     <a class="left carousel-control" href="#fruitscarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
@@ -30,9 +25,7 @@
     </div>
   </div>
 </div>
-</div>
-</div>
-</div>
+
 </div>
 
   <div>
@@ -52,8 +45,26 @@
 <div>
 
   <script>
+  jQuery(document).ready(function() {
+    jQuery('.carousel[data-type="multi"] .item').each(function(){
+      var next = jQuery(this).next();
+      if (!next.length) {
+        next = jQuery(this).siblings(':first');
+      }
+      next.children(':first-child').clone().appendTo(jQuery(this));
+      
+      for (var i=0;i<2;i++) {
+        next=next.next();
+        if (!next.length) {
+          next = jQuery(this).siblings(':first');
+        }
+        next.children(':first-child').clone().appendTo($(this));
+      }
+    });    
+  });
+
   $( function() {
-    $( ".draggable" ).draggable({stack: "div"});
+    $( ".draggable" ).draggable();
     $( ".droppable" ).droppable({
       drop: function( event, ui ) {
         $( this )
@@ -76,26 +87,6 @@
       }
     });
   });
-
-  jQuery(document).ready(function() {
-        
-  jQuery('.carousel[data-type="multi"] .item').each(function(){
-    var next = jQuery(this).next();
-    if (!next.length) {
-      next = jQuery(this).siblings(':first');
-    }
-    next.children(':first-child').clone().appendTo(jQuery(this));
-    
-    for (var i=0;i<2;i++) {
-      next=next.next();
-      if (!next.length) {
-        next = jQuery(this).siblings(':first');
-      }
-      next.children(':first-child').clone().appendTo($(this));
-    }
-  });
-        
-});
   </script>
 </div>
 
