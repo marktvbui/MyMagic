@@ -198,7 +198,8 @@ body {
 
 .collectionDroppable {
   background-image: url('http://pre09.deviantart.net/d76a/th/pre/i/2012/092/8/9/magic_the_gathering__mana_symbols_by_nikoru_s__nobody-d4nouoc.png');
-  z-index: 9999 !important;
+  z-index: -100 !important;
+  opacity: .7;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -210,7 +211,8 @@ body {
 }
 
 .item {
-  z-index: 1 !important;
+  position: absolute;
+  z-index: 9999 !important;
 }
 // .draggable { 
 //   z-index: 100;

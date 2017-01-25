@@ -42,7 +42,7 @@
 
 
 
-<div>
+
 
   <script>
   jQuery(document).ready(function() {
@@ -64,7 +64,7 @@
   });
 
   $( function() {
-    $( ".draggable" ).draggable();
+    $( ".draggable" ).draggable({appendTo: 'body', containment: 'window', scroll: false, helper: 'clone'});
     $( ".droppable" ).droppable({
       drop: function( event, ui ) {
         $( this )
@@ -88,7 +88,7 @@
     });
   });
   </script>
-</div>
+
 
 <style>
 .carousel-control.left, .carousel-control.right {
