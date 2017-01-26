@@ -5,7 +5,7 @@
 
   <div class="collectionIndex">
     <% @collection_cards.sorted_by_type.each do |type, collection_cards| %>
-    <div class="collectionTitle"><%= type.capitalize %>: </div>
+    <div class="collectionTitle"><%= type.capitalize %>: (<%= collection_cards.length %>)</div>
     <div class="collectionCards">
       <% collection_cards.each do |collection_card| %>
           <div class="hover_img">
