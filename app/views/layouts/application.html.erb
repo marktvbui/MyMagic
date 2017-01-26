@@ -50,50 +50,7 @@
 
     <!-- Color Scheme (In order to change the color scheme, replace the blue.css with the color scheme that you prefer)-->
     <link href="/template/css/skins/light_blue.css" rel="stylesheet">
-<style>
-#email_templates .btn-blue { margin-bottom: 10px; display: block; border-color: #3697d9; color: #3697d9;  }
-#email_templates .btn-blue:hover,
-#email_templates .btn-blue:focus { background-color: #338dca; color: #fff; border-color: #338dca; }
-#email_templates .btn-brown { margin-bottom: 10px; display: block; border-color: #91633c; color: #91633c;  }
-#email_templates .btn-brown:hover,
-#email_templates .btn-brown:focus { background-color: #795332; color: #fff; border-color: #795332; }
-#email_templates .btn-cool-green { margin-bottom: 10px; display: block; border-color: #21bb9d; color: #21bb9d;  }
-#email_templates .btn-cool-green:hover,
-#email_templates .btn-cool-green:focus { background-color: #1ea88d; color: #fff; border-color: #1ea88d; }
-#email_templates .btn-dark-cyan { margin-bottom: 10px; display: block; border-color: #2aa4a5; color: #2aa4a5;  }
-#email_templates .btn-dark-cyan:hover,
-#email_templates .btn-dark-cyan:focus { background-color: #248d8e; color: #fff; border-color: #248d8e; }
-#email_templates .btn-dark-red { margin-bottom: 10px; display: block; border-color: #992020; color: #992020;  }
-#email_templates .btn-dark-red:hover,
-#email_templates .btn-dark-red:focus { background-color: #681313; color: #fff; border-color: #681313; }
-#email_templates .btn-gold { margin-bottom: 10px; display: block; border-color: #c7ac56; color: #c7ac56;  }
-#email_templates .btn-gold:hover,
-#email_templates .btn-gold:focus { background-color: #b0984d; color: #fff; border-color: #b0984d; }
-#email_templates .btn-gray { margin-bottom: 10px; display: block; border-color: #809398; color: #809398;  background-color: transparent; }
-#email_templates .btn-gray:hover,
-#email_templates .btn-gray:focus { background-color: #6e7e82; color: #fff; border-color: #6e7e82;sparent; text-decoration: none; }
-#email_templates .btn-green { margin-bottom: 10px; display: block; border-color: #24a828; color: #24a828;  }
-#email_templates .btn-green:hover,
-#email_templates .btn-green:focus { background-color: #1f9123; color: #fff; border-color: #1f9123; }
-#email_templates .btn-light-blue { margin-bottom: 10px; display: block; border-color: #09afdf; color: #09afdf;  }
-#email_templates .btn-light-blue:hover,
-#email_templates .btn-light-blue:focus { background-color: #0c9ec7; color: #fff; border-color: #0c9ec7; }
-#email_templates .btn-orange { margin-bottom: 10px; display: block; border-color: #e07e27; color: #e07e27;  }
-#email_templates .btn-orange:hover,
-#email_templates .btn-orange:focus { background-color: #cc7324; color: #fff; border-color: #cc7324; }
-#email_templates .btn-pink { margin-bottom: 10px; display: block; border-color: #dd7b9b; color: #dd7b9b;  }
-#email_templates .btn-pink:hover,
-#email_templates .btn-pink:focus { background-color: #c9718e; color: #fff; border-color: #c9718e; }
-#email_templates .btn-purple { margin-bottom: 10px; display: block; border-color: #ab6cc6; color: #ab6cc6;  }
-#email_templates .btn-purple:hover,
-#email_templates .btn-purple:focus { background-color: #9760af; color: #fff; border-color: #9760af; }
-#email_templates .btn-red { margin-bottom: 10px; display: block; border-color: #dc5b5b; color: #dc5b5b;  }
-#email_templates .btn-red:hover,
-#email_templates .btn-red:focus { background-color: #c15050; color: #fff; border-color: #c15050; }
-#email_templates .btn-vivid-red { margin-bottom: 10px; display: block; border-color: #c82727; color: #c82727;  }
-#email_templates .btn-vivid-red:hover,
-#email_templates .btn-vivid-red:focus { background-color: #b42424; color: #fff; border-color: #b42424; }
-</style>
+
     <!-- Custom css --> 
 
 
@@ -249,9 +206,11 @@
             <div class="input-group text-center">
               <%= form_tag("/cards_search", :method => "get", id: "search-form") do %>
               <%= text_field_tag :name, params[:name], placeholder: "Search Cards ", class: 'form-control' %>
-              <span class="input-group-btn text-center searchForm">
-                <%= submit_tag "Search", class: 'btn btn-default' %>
-              </span>
+              <center>
+                <span class="input-group-btn text-center searchForm">
+                  <%= submit_tag "Search", class: 'btn btn-default' %>
+                </span>
+              </center>
               <% end %>
             </div>
           <center>
@@ -344,3 +303,49 @@
 
   </body>
 </html>
+
+
+<style>
+#email_templates .btn-blue { margin-bottom: 10px; display: block; border-color: #3697d9; color: #3697d9;  }
+#email_templates .btn-blue:hover,
+#email_templates .btn-blue:focus { background-color: #338dca; color: #fff; border-color: #338dca; }
+#email_templates .btn-brown { margin-bottom: 10px; display: block; border-color: #91633c; color: #91633c;  }
+#email_templates .btn-brown:hover,
+#email_templates .btn-brown:focus { background-color: #795332; color: #fff; border-color: #795332; }
+#email_templates .btn-cool-green { margin-bottom: 10px; display: block; border-color: #21bb9d; color: #21bb9d;  }
+#email_templates .btn-cool-green:hover,
+#email_templates .btn-cool-green:focus { background-color: #1ea88d; color: #fff; border-color: #1ea88d; }
+#email_templates .btn-dark-cyan { margin-bottom: 10px; display: block; border-color: #2aa4a5; color: #2aa4a5;  }
+#email_templates .btn-dark-cyan:hover,
+#email_templates .btn-dark-cyan:focus { background-color: #248d8e; color: #fff; border-color: #248d8e; }
+#email_templates .btn-dark-red { margin-bottom: 10px; display: block; border-color: #992020; color: #992020;  }
+#email_templates .btn-dark-red:hover,
+#email_templates .btn-dark-red:focus { background-color: #681313; color: #fff; border-color: #681313; }
+#email_templates .btn-gold { margin-bottom: 10px; display: block; border-color: #c7ac56; color: #c7ac56;  }
+#email_templates .btn-gold:hover,
+#email_templates .btn-gold:focus { background-color: #b0984d; color: #fff; border-color: #b0984d; }
+#email_templates .btn-gray { margin-bottom: 10px; display: block; border-color: #809398; color: #809398;  background-color: transparent; }
+#email_templates .btn-gray:hover,
+#email_templates .btn-gray:focus { background-color: #6e7e82; color: #fff; border-color: #6e7e82;sparent; text-decoration: none; }
+#email_templates .btn-green { margin-bottom: 10px; display: block; border-color: #24a828; color: #24a828;  }
+#email_templates .btn-green:hover,
+#email_templates .btn-green:focus { background-color: #1f9123; color: #fff; border-color: #1f9123; }
+#email_templates .btn-light-blue { margin-bottom: 10px; display: block; border-color: #09afdf; color: #09afdf;  }
+#email_templates .btn-light-blue:hover,
+#email_templates .btn-light-blue:focus { background-color: #0c9ec7; color: #fff; border-color: #0c9ec7; }
+#email_templates .btn-orange { margin-bottom: 10px; display: block; border-color: #e07e27; color: #e07e27;  }
+#email_templates .btn-orange:hover,
+#email_templates .btn-orange:focus { background-color: #cc7324; color: #fff; border-color: #cc7324; }
+#email_templates .btn-pink { margin-bottom: 10px; display: block; border-color: #dd7b9b; color: #dd7b9b;  }
+#email_templates .btn-pink:hover,
+#email_templates .btn-pink:focus { background-color: #c9718e; color: #fff; border-color: #c9718e; }
+#email_templates .btn-purple { margin-bottom: 10px; display: block; border-color: #ab6cc6; color: #ab6cc6;  }
+#email_templates .btn-purple:hover,
+#email_templates .btn-purple:focus { background-color: #9760af; color: #fff; border-color: #9760af; }
+#email_templates .btn-red { margin-bottom: 10px; display: block; border-color: #dc5b5b; color: #dc5b5b;  }
+#email_templates .btn-red:hover,
+#email_templates .btn-red:focus { background-color: #c15050; color: #fff; border-color: #c15050; }
+#email_templates .btn-vivid-red { margin-bottom: 10px; display: block; border-color: #c82727; color: #c82727;  }
+#email_templates .btn-vivid-red:hover,
+#email_templates .btn-vivid-red:focus { background-color: #b42424; color: #fff; border-color: #b42424; }
+</style>
