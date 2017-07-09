@@ -80,7 +80,7 @@ body {
   position: fixed;
   left: 1150px;
   top: 350px;
-  bottom: 50px;
+  bottom: 100px;
 }
 
 // hover_img allows mouse over to load image of card
@@ -98,7 +98,7 @@ body {
   height: 300px;
   width: 200px;
   position: fixed;
-  left: 400px;
+  left: 650px;
   bottom: 50px;
 }
 // loader css loads an image while website loads
@@ -120,7 +120,7 @@ body {
 }
 // settings for images in carousel on home page
 .homeCarousel {
-  margin: auto;
+  margin: 0 auto;
   display: block;
   position: fixed;
   left: 600px;

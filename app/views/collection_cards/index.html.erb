@@ -8,8 +8,8 @@
     <div class="collectionTitle"><%= type.capitalize %>: (<%= collection_cards.length %>)</div>
     <div class="collectionCards">
       <% collection_cards.each do |collection_card| %>
-          <div class="hover_img">
-            <li><%= collection_card[:quantity] %>:<a href=""><%= collection_card[:card].name %><span><img src="<%= collection_card[:card].image_url %>" /></span></a>
+          <div class="hover_img" id="cardQuantity">
+            <li><%= collection_card[:quantity] %>:<a onclick="increase_quantity()"><%= collection_card[:card].name %></a><span><img src="<%= collection_card[:card].image_url %>" /></span>
             </li>
           </div>
       <% end %>
@@ -17,4 +17,22 @@
     <% end %>
   </div>
 </body>
+
+<script>
+// {
+  $(document).ready(function() {
+    var increase = getElementyByID('#cardQuantity').on('click', function(){
+      var i = collection_card.quantity;
+      i++;
+    })
+  }
+//   document.getElementyByID("#cardQuantity").onclick = function increase_quantity(){
+//     var i = collection_card.quantity;
+//     i++;
+//   }
+// }
+</script>
+
+
+
 

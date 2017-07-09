@@ -31,7 +31,7 @@
 
     <!-- Font Awesome CSS -->
     <link href="/template/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <!--     Google "Philosopher" font -->    
+    <!--     Google "Philosopher" font -->
     <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
     <!-- Fontello CSS -->
     <link href="/template/fonts/fontello/css/fontello.css" rel="stylesheet">
@@ -42,8 +42,7 @@
     <link href="/template/css/animations.css" rel="stylesheet">
     <link href="/template/plugins/owl-carousel/owl.carousel.css" rel="stylesheet">
     <link href="/template/plugins/owl-carousel/owl.transitions.css" rel="stylesheet">
-    <link href="/template/plugins/hover/hover-min.css" rel="stylesheet">   
-    
+    <link href="/template/plugins/hover/hover-min.css" rel="stylesheet">
     <!-- the project core CSS file -->
     <link href="/template/css/style.css" rel="stylesheet" >
     <link href="/template/css/typography-default.css" rel="stylesheet" >
@@ -51,7 +50,7 @@
     <!-- Color Scheme (In order to change the color scheme, replace the blue.css with the color scheme that you prefer)-->
     <link href="/template/css/skins/light_blue.css" rel="stylesheet">
 
-    <!-- Custom css --> 
+    <!-- Custom css -->
 
 
     <%= csrf_meta_tags %>
@@ -96,7 +95,6 @@
                     <li class="facebook"><a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
                     <li class="pinterest"><a target="_blank" href="http://www.pinterest.com"><i class="fa fa-pinterest"></i></a></li>
                   </ul>
-                 
                   <ul class="list-inline hidden-sm hidden-xs">
                     <li><i class="fa fa-map-marker pr-5 pl-10"></i>One Mana Way, Magic City, CA 27232-1180</li>
                     <li><i class="fa fa-phone pr-5 pl-10"></i>1 MagicMarks</li>
@@ -122,25 +120,20 @@
                       <a href="/sign_up" class="btn btn-default btn-sm"><i class="fa fa-user pr-10"></i> Sign Up </a>
                     </div>
                     <div class="btn-group dropdown">
-                      <button type="button" class="btn dropdown-toggle btn-default btn-sm" data-toggle="dropdown"><i class="fa fa-lock pr-10"><a href="/login"></i> Login</button> 
+                      <button type="button" class="btn dropdown-toggle btn-default btn-sm" data-toggle="dropdown"><i class="fa fa-lock pr-10"><a href="/login"></i> Login</button>
                       <ul class="dropdown-menu dropdown-menu-right dropdown-animation">
                         <li>
-                            
                           <%= form_for(:user, :url => session_path(:user)) do |f| %>
                              <div class="form-group has-feedback">
                               <label class="control-label">Username</label>
- 
                               <input type="text" class="form-control" placeholder=" <%= f.text_field :email %>">
                               <i class="fa fa-user form-control-feedback"></i>
                             </div>
-  
                             <div class="form-group has-feedback">
                               <label class="control-label">Password</label>
                               <input type="password" class="form-control" placeholder="<%= f.password_field :password %>">
-                             
                               <i class="fa fa-lock form-control-feedback"></i>
                             </div>
-                           
                             <%= f.check_box :remember_me %>
                             <%= f.label :remember_me %>
                             <%= f.submit 'Log in' %>
@@ -153,7 +146,6 @@
                             <ul class="social-links circle small colored clearfix">
                               <li class="facebook"><a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
                             </ul>
-                      
                         </li>
                       </ul>
                     </div>
@@ -170,9 +162,9 @@
             </div>
           </div>
         </div>
-        <!-- header-top end -->       
+        <!-- header-top end -->
         <!-- header start -->
-        <header class="header  fixed    clearfix headerbackground">  
+        <header class="header  fixed    clearfix headerbackground">
           <div class="container">
             <div class="row">
               <div class="col-md-3 ">
@@ -256,7 +248,7 @@
     </script>
     <!-- JavaScript files placed at the end of the document so the pages load faster -->
     <!-- <script src="/node_modules/jquery/dist/jquery.js"></script> -->
-      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <!-- ================================================== -->
     <!-- Jquery and Bootstap core js files -->

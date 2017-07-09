@@ -10,8 +10,10 @@
 //       });
 //     };
 
-//     $scope.searchCard = function() {
-
+//     $scope.searchCards = function(card) {
+//       $http.get('<%= ENV['API_URL'] %>').then(function(response) {
+//         $scope.cards = response.data;
+//       });
 //     };
 //   });
 
